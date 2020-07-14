@@ -1,6 +1,5 @@
 window.onload = function() {
-    let score = 0;
-
+    
     const urlParams = new URLSearchParams(window.location.search);
     const idTheme = urlParams.get('idTheme');
     let choosenTheme = findChoosenTheme(idTheme);
@@ -41,16 +40,14 @@ window.onload = function() {
     
     function afficherMesThemes(){
         let question = document.getElementById('question'); // DIV qui contient la question à mon QUIZZ
-        let reponses = document.getElementByIf('reponses'); // DIV qui contient les réponses à mon QUIZZ
+        let reponses = document.getElementById('reponses'); // DIV qui contient les réponses à mon QUIZZ
+        let questionReponse = choosenTheme[0];
+
+        question.innerHTML = questionReponse.poserQuestion;
+        reponses.innerHTML = questionReponse.reponsesPossibles;
     }
+    afficherMesThemes();
     
-
-
-
-
-    function ajouterMarche(){ 
-    score++;
-    }
     
     function gagnerUneMedaille(){
     
