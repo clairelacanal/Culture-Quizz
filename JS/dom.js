@@ -2,12 +2,12 @@ window.onload = function() {
     
     const urlParams = new URLSearchParams(window.location.search);
     const idTheme = urlParams.get('idTheme');
-    let choosenTheme = findChoosenTheme(idTheme);
-    console.log(choosenTheme);
+    let choosenQuestionResponses = findAllQuestionResponses(idTheme);
+    console.log(choosenQuestionResponses);
 
 
-    function findChoosenTheme(id){
-      
+    function findAllQuestionResponses(id){
+        console.log(id);
         let reponse;
 
         if(id === 'item1') {
@@ -19,9 +19,9 @@ window.onload = function() {
         }else if(id === 'item4') {
             reponse = natureEtEnvironnement;
         }else if(id === 'item5') {
-            reponse = santeEtMedecine;
-        }else if(id === 'item6') {
             reponse = sport;
+        }else if(id === 'item6') {
+            reponse = santeEtMedecine;
         }
         return reponse;
     }
@@ -39,12 +39,30 @@ window.onload = function() {
 
     
     function afficherMesThemes(){
-        let question = document.getElementById('question'); // DIV qui contient la question à mon QUIZZ
-        let reponses = document.getElementById('reponses'); // DIV qui contient les réponses à mon QUIZZ
-        let questionReponse = choosenTheme[0];
+        let questionEl = document.getElementById('question'); // DIV qui contient la question à mon QUIZZ
+        let reponsesEl = document.getElementById('reponses'); // DIV qui contient les réponses à mon QUIZZ
+        let questionReponse = choosenQuestionResponses[0];
+        let reponsesPossibles = questionReponse.reponsesPossibles;
 
-        question.innerHTML = questionReponse.poserQuestion;
-        reponses.innerHTML = questionReponse.reponsesPossibles;
+        questionEl.innerHTML = questionReponse.poserQuestion;
+
+        for(let i = 0; i < reponsesPossibles.length; i++) {
+            let div = document.createElement('div');
+            div.setAttribute("class", "reponse");
+            reponsesEl.appendChild(div);
+
+            let input = document.createElement('input');
+            input.setAttribute("type", "radio");
+            input.setAttribute("id", "item-" + (i+1));
+            input.setAttribute("name", "reponse");
+            input.value = i;
+            div.appendChild(input);
+
+            let label = document.createElement('label');
+            label.setAttribute("for", i);
+            label.innerHTML = reponsesPossibles[i];
+            div.appendChild(label);
+        }
     }
     afficherMesThemes();
     
