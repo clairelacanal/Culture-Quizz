@@ -100,29 +100,3 @@ h3 {
     text-align: center;
 }
 
-.button-jouer{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-top: 6em;
-}
-
-button {
-    background-color: #004445;
-    border: 1px solid #004445;
-    width: 15em;
-    height: 3.5em;
-    color:  #f8b400;
-    font-weight: 700;
-    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
-    cursor: pointer;
-    text-transform: uppercase;
-    border-radius: 0.5em;
-}
-
-a {
-    text-decoration: none;
-    color:  #f8b400;
-    font-weight: 700;
-}

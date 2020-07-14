@@ -107,4 +107,8 @@ button {
     border-radius: 0.5em;
 }
 
+canvas {
+    border: 1px solid red ;
+}
+
 

@@ -1,58 +1,55 @@
-window.document.onload = function() {
+window.onload = function() {
+    let score = 0;
 
-    function selectTheme(){
-        let item1 = document.getElementById('item1'); // THÈMES DE MON QUIZZ
-        let item2 = document.getElementById('item2');
-        let item3 = document.getElementById('item3');
-        let item4 = document.getElementById('item4');
-        let item5 = document.getElementById('item5');
-        let item6 = document.getElementById('item6');
-        
+    const urlParams = new URLSearchParams(window.location.search);
+    const idTheme = urlParams.get('idTheme');
+    let choosenTheme = findChoosenTheme(idTheme);
+    console.log(choosenTheme);
+
+
+    function findChoosenTheme(id){
+      
         let reponse;
 
-        if(item1) {
+        if(id === 'item1') {
             reponse = artEtLiterrature;
-        }else if(item2) {
+        }else if(id === 'item2') {
             reponse = geographieEtHistoire;
-        }else if(item3) {
+        }else if(id === 'item3') {
             reponse = musiqueEtFilms;
-        }else if(item4) {
+        }else if(id === 'item4') {
             reponse = natureEtEnvironnement;
-        }else if(item5) {
+        }else if(id === 'item5') {
             reponse = santeEtMedecine;
-        }else if(item6) {
+        }else if(id === 'item6') {
             reponse = sport;
         }
         return reponse;
     }
 
-    selectTheme();
     
-    const article = document.getElementById('article');
-    article.addEventListener("click", selectTheme {
-        article.style.backgroundColor = '#004445';
-        article.style.border = '#2c786c';
-        article.style.color = '#f8b400';
+    const items = document.getElementsByClassName('items');
+    const itemsArr = Array.from(items);
+    itemsArr.forEach(function(item){
+        item.addEventListener("click", () => {
+            let id = item.id;
+            window.location.href = "../HTML/main.html?idTheme=" + id;
+        });
     });
+
+
     
-    const button = document.getElementById('button');
-    button.addEventListener("click", function( event )  {
-    event.target.style.backgroundColor = '#2c786c';
-    };
-    
-    
-    function validerReponse(){
+    function afficherMesThemes(){
         let question = document.getElementById('question'); // DIV qui contient la question à mon QUIZZ
         let reponses = document.getElementByIf('reponses'); // DIV qui contient les réponses à mon QUIZZ
-    
     }
     
 
 
 
 
-    function ajouterMarche(){
-    
+    function ajouterMarche(){ 
+    score++;
     }
     
     function gagnerUneMedaille(){
