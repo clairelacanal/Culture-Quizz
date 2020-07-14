@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Culture Quizz</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--Font Awesome-->
+        <script src="https://kit.fontawesome.com/4aa9ac932d.js" crossorigin="anonymous"></script>
+
+    <!--Custom Style-->
+        <link rel="stylesheet" href="../CSS/main.css">
+    </head>
+    <body>
+        <section id= "main">
+            <div class="tire-du-jeu">
+                <p>Culture Quizz</p>
+                <img src="../images/light-47189_640.png" alt="ampoule">
+            </div>
+        </section>
+        <section id="container-game">
+            <div id="container-quizz">
+                <div class="item-quizz">
+                    <div id="chronometre">
+
+                    </div>
+                    <div id="question">
+
+                    </div>
+                    <div id="reponses">
+                        <input type="radio" id="item-1" name="item-1">
+                        <input type="radio" id="item-2" name="item-2">
+                        <input type="radio" id="item-3" name="item-3">
+                        <input type="radio" id="item-4" name="item-4">
+                    </div>
+                </div>
+                <div class="button-val">
+                    <button type="button-valider" id="button">je valide</button>
+                </div>
+            </div>
+            <div id="container-canvas">
+                <canvas id="tutorial" width="150" height="150"></canvas>
+            </div>
+        </section>
+        <!--Balises script-->
+        <script type="text/javascript" src="data.js"></script>
+        <script type="text/javascript" src="chronometre.js"></script>
+        <script type="text/javascript" src="canvas.js"></script>
+        <script type="text/javascript" src="dom.js"></script>
+    </body>
+</html>

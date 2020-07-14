@@ -1,0 +1,59 @@
+
+body {
+    background-color: #f8b400;
+    margin: 0;
+    box-sizing: border-box;    
+}
+
+#main {
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.tire-du-jeu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+p {
+    font-weight: 700;
+    font-size: 70px;
+    font-family: 'Oswald', sans-serif;
+    color: #004445;
+}
+
+.tire-du-jeu img {
+    width: 300px;
+    height: 400px;
+}
+
+.button {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;   
+}
+
+button {
+    background-color: #004445;
+    border: 1px solid #004445;
+    width: 15em;
+    height: 3.5em;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+    cursor: pointer;
+    border-radius: 0.5em;
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+    color:  #f8b400;
+    font-weight: 700;
+}
