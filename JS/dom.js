@@ -1,20 +1,21 @@
 window.document.onload = function() {
 
-    let question = document.getElementById('question'); // DIV qui contient la question à mon QUIZZ
-    let reponses = document.getElementByIf('reponses'); // DIV qui contient les réponses à mon QUIZZ
-    
-    let item1 = document.getElementById('item1'); // THÈMES DE MON QUIZZ
-    let item2 = document.getElementById('item2');
-    let item3 = document.getElementById('item3');
-    let item4 = document.getElementById('item4');
-    let item5 = document.getElementById('item5');
-    let item6 = document.getElementById('item6');
-    
     function selectTheme(){
-        let choixTheme = document.getElementsByTagName('article');
-        choixTheme.onclick = function() {
-        choixTheme.style.backgroundColor = 'red';
-        }
+        let item1 = document.getElementById('item1'); // THÈMES DE MON QUIZZ
+        let item2 = document.getElementById('item2');
+        let item3 = document.getElementById('item3');
+        let item4 = document.getElementById('item4');
+        let item5 = document.getElementById('item5');
+        let item6 = document.getElementById('item6');
+
+        let question = document.getElementById('question'); // DIV qui contient la question à mon QUIZZ
+        let reponses = document.getElementByIf('reponses'); // DIV qui contient les réponses à mon QUIZZ
+    
+        if()
+        
+  
+        
+        
     }
     selectTheme();
     

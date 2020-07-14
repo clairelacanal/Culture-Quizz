@@ -1,3 +1,21 @@
+Class QuestionsReponses {
+    constructor(question, index, poserQuestion,reponsesPossibles,indexOfReponse)
+    this.question = 'Question',
+    this.index = this.index,
+    this.poserQuestion = this.poserQuestion,
+    this.reponsesPossibles = this.reponsesPossibles,
+    this.indexOfReponse = this.indexOfReponse
+}
+
+let newTheme1 = new QuestionsReponses(artEtLiterrature);
+let newTheme2 = new QuestionsReponses(geographieEtHistoire);
+let newTheme3 = new QuestionsReponses(musiqueEtFilms);
+let newTheme4 = new QuestionsReponses(natureEtEnvironnement);
+let newTheme5 = new QuestionsReponses(santeEtMedecine);
+let newThème6 = new QuestionsReponses(sport);
+
+
+
 const artEtLiterrature = [
     {
         question: 'Question',
