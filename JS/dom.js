@@ -3,7 +3,12 @@ window.onload = function() {
     const urlParams = new URLSearchParams(window.location.search);
     const idTheme = urlParams.get('idTheme');
     let choosenQuestionResponses = findAllQuestionResponses(idTheme);
-    let questionReponse = choosenQuestionResponses[0];
+    let indexQuestion = 0;
+    let questionReponse = choosenQuestionResponses[indexQuestion];
+    afficherQuestion();
+    changeBoutonValider();
+
+
 
     function findAllQuestionResponses(id){
         console.log(id);
@@ -25,7 +30,6 @@ window.onload = function() {
         return reponse;
     }
 
-    
     const items = document.getElementsByClassName('items');
     const itemsArr = Array.from(items);
     itemsArr.forEach(function(item){
@@ -36,11 +40,16 @@ window.onload = function() {
     });
 
 
+
+
     
-    function afficherMesThemes(){
+    function afficherQuestion(){
         let questionEl = document.getElementById('question'); // DIV qui contient la question à mon QUIZZ
         let reponsesEl = document.getElementById('rep-possibles'); // DIV qui contient les réponses à mon QUIZZ
         
+        questionEl.innerHTML = "";
+        reponsesEl.innerHTML = "";
+
         let reponsesPossibles = questionReponse.reponsesPossibles;
 
         questionEl.innerHTML = questionReponse.poserQuestion;
@@ -63,54 +72,57 @@ window.onload = function() {
             div.appendChild(label);
         }
     }
-    afficherMesThemes();
 
 
-    function validerQuestion() {
-        let phraseAnnonce = document.getElementById('reponses');
-        let bonneReponse = questionReponse.indexOfReponse;
-        let reponsesProposees = questionReponse.reponsesPossibles;
-        
+    function changeBoutonValider() {
         const buttonValider = document.getElementById('button');
-
+        buttonValider.innerHTML = "Je valide";
         buttonValider.addEventListener("click", () => {
-            let indexReponseChoisie = document.querySelector('input[name="reponse"]:checked').value;
-            console.log(indexReponseChoisie);
-            console.log(bonneReponse);
-
-            if(bonneReponse == indexReponseChoisie) {
-                let div = document.getElementById('annonce-rep');
-                div.innerHTML = 'Bonne réponse !';
-                div.style.color = 'green';
-                
-                
-            } else {
-                let div = document.getElementById('annonce-rep');
-                div.innerHTML = 'La bonne réponse est :' + reponsesProposees[bonneReponse];
-                div.style.color = 'red';
-                
-            }
-            
+            verifieReponse();
+            buttonValider.innerHTML = "Question suivante";
+            buttonValider.addEventListener("click", () => {
+                questionSuivante();
+            });
         });
     }
 
+    function verifieReponse() {
+        let bonneReponse = questionReponse.indexOfReponse;
+        let reponsesProposees = questionReponse.reponsesPossibles;
 
-    function questionSuivante() {
-        let validationQuestion = validerQuestion();
-        let result;
-
-        let buttonSuivant = document.getElementById('suivant');
-        buttonSuivant.onclick = function() {
-            if(!validationQuestion) {
-                result = 'Veuillez cocher une réponse';
-            }else if(validationQuestion){
-                for(let i = 0; i < choosenQuestionResponses.length; i++) {
-                    result = choosenQuestionResponses[i];
-                }
-            }
-        } 
+        document.getElementById('annonce-rep').innerHTML = "";
+        let indexReponseChoisie = document.querySelector('input[name="reponse"]:checked').value;
+        
+        if(bonneReponse == indexReponseChoisie) {
+            let div = document.getElementById('annonce-rep');
+            div.innerHTML = 'Bonne réponse !';
+            div.style.color = 'green';
+        } else {
+            let div = document.getElementById('annonce-rep');
+            div.innerHTML = 'La bonne réponse est :' + reponsesProposees[bonneReponse];
+            div.style.color = 'red';
+        }
     }
-    questionSuivante();
+    
+
+    
+
+    function questionSuivante(){
+        indexQuestion++;
+        questionReponse = choosenQuestionResponses[indexQuestion];
+        afficherQuestion();
+        changeBoutonValider();
+    }
+
+    // function checkQuestionSuivante() {
+    //     let result;
+    //     let buttonSuivant = document.getElementById('suivant');
+    //     buttonSuivant.onclick = function() {
+    //         questionSuivante();
+    //     } 
+    //     return result;
+    // }
+    // checkQuestionSuivante();
     
 }
 
