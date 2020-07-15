@@ -65,6 +65,21 @@ window.onload = function() {
         }
     }
     afficherMesThemes();
+
+
+    function validerQuestion() {
+        let questionSuivante = poserQuestion;
+        let reponseSuivante =  reponsesPossibles;
+        let result;
+        const buttonValider = document.getElementById('button-valider');
+        buttonValider.onclick = function() {
+            for(let i = 0; i < questionSuivante.length; i++) {
+                result = questionSuivante[i];
+            } 
+            return result;
+        } 
+    }
+    validerQuestion();
     
     
     function gagnerUneMedaille(){
