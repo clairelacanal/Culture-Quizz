@@ -111,4 +111,23 @@ canvas {
     border: 1px solid red ;
 }
 
+.button-suivant {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;   
+}
+
+button {
+    background-color: #004445;
+    border: 1px solid #004445;
+    width: 15em;
+    height: 3.5em;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+    cursor: pointer;
+    border-radius: 0.5em;
+    text-transform: uppercase;
+}
 

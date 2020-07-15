@@ -3,8 +3,7 @@ window.onload = function() {
     const urlParams = new URLSearchParams(window.location.search);
     const idTheme = urlParams.get('idTheme');
     let choosenQuestionResponses = findAllQuestionResponses(idTheme);
-    console.log(choosenQuestionResponses);
-
+    let questionReponse = choosenQuestionResponses[0];
 
     function findAllQuestionResponses(id){
         console.log(id);
@@ -40,8 +39,8 @@ window.onload = function() {
     
     function afficherMesThemes(){
         let questionEl = document.getElementById('question'); // DIV qui contient la question à mon QUIZZ
-        let reponsesEl = document.getElementById('reponses'); // DIV qui contient les réponses à mon QUIZZ
-        let questionReponse = choosenQuestionResponses[0];
+        let reponsesEl = document.getElementById('rep-possibles'); // DIV qui contient les réponses à mon QUIZZ
+        
         let reponsesPossibles = questionReponse.reponsesPossibles;
 
         questionEl.innerHTML = questionReponse.poserQuestion;
@@ -69,36 +68,49 @@ window.onload = function() {
 
     function validerQuestion() {
         let phraseAnnonce = document.getElementById('reponses');
-        let verifierBonneReponse = true;
-        let bonneReponse = indexOfReponse;
-        let reponsesProposees = reponsesPossibles;
+        let bonneReponse = questionReponse.indexOfReponse;
+        let reponsesProposees = questionReponse.reponsesPossibles;
         
-        const buttonValider = document.getElementById('button-valider');
-        buttonValider.onclick = function() {
-            for(let i = 0; i < reponsesProposees.length; i++) {
-                if(bonneReponse === reponsesProposees[i]) {
-                    let div = document.createElement('div');
-                    div.setAttribute("class", "annonceP");
-                    div.innerHTML = 'Bonne réponse !';
-                    phraseAnnonce.appendChild('div');
-                    
-                    
-                }else if(bonneReponse !== reponsesProposees[i]){
-                    let div = document.createElement('div');
-                    div.setAttribute("class", "annonceN");
-                    div.innerHTML = 'La bonne réponse est :' + bonneReponse;
-                    phraseAnnonce.appendChild('div');
-                }
-            } 
-        } 
+        const buttonValider = document.getElementById('button');
+
+        buttonValider.addEventListener("click", () => {
+            let indexReponseChoisie = document.querySelector('input[name="reponse"]:checked').value;
+            console.log(indexReponseChoisie);
+            console.log(bonneReponse);
+
+            if(bonneReponse == indexReponseChoisie) {
+                let div = document.getElementById('annonce-rep');
+                div.innerHTML = 'Bonne réponse !';
+                div.style.color = 'green';
+                
+                
+            } else {
+                let div = document.getElementById('annonce-rep');
+                div.innerHTML = 'La bonne réponse est :' + reponsesProposees[bonneReponse];
+                div.style.color = 'red';
+                
+            }
+            
+        });
     }
-    validerQuestion();
 
 
     function questionSuivante() {
-        
+        let validationQuestion = validerQuestion();
+        let result;
+
+        let buttonSuivant = document.getElementById('suivant');
+        buttonSuivant.onclick = function() {
+            if(!validationQuestion) {
+                result = 'Veuillez cocher une réponse';
+            }else if(validationQuestion){
+                for(let i = 0; i < choosenQuestionResponses.length; i++) {
+                    result = choosenQuestionResponses[i];
+                }
+            }
+        } 
     }
-    
+    questionSuivante();
     
 }
 
