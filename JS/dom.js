@@ -68,36 +68,38 @@ window.onload = function() {
 
 
     function validerQuestion() {
-        let questionSuivante = poserQuestion;
-        let reponseSuivante =  reponsesPossibles;
-        let result;
+        let phraseAnnonce = document.getElementById('reponses');
+        let verifierBonneReponse = true;
+        let bonneReponse = indexOfReponse;
+        let reponsesProposees = reponsesPossibles;
+        
         const buttonValider = document.getElementById('button-valider');
         buttonValider.onclick = function() {
-            for(let i = 0; i < questionSuivante.length; i++) {
-                result = questionSuivante[i];
+            for(let i = 0; i < reponsesProposees.length; i++) {
+                if(bonneReponse === reponsesProposees[i]) {
+                    let div = document.createElement('div');
+                    div.setAttribute("class", "annonceP");
+                    div.innerHTML = 'Bonne réponse !';
+                    phraseAnnonce.appendChild('div');
+                    
+                    
+                }else if(bonneReponse !== reponsesProposees[i]){
+                    let div = document.createElement('div');
+                    div.setAttribute("class", "annonceN");
+                    div.innerHTML = 'La bonne réponse est :' + bonneReponse;
+                    phraseAnnonce.appendChild('div');
+                }
             } 
-            return result;
         } 
     }
     validerQuestion();
-    
-    
-    function gagnerUneMedaille(){
-    
+
+
+    function questionSuivante() {
+        
     }
     
-    function gagnerLaCoupe(){
     
-    }
-
-
-
-
-
-
-
-
-
 }
 
 

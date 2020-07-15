@@ -6,3 +6,12 @@ let score = 0;
 function ajouterMarche(){ 
     score++;
 }
+
+function gagnerUneMedaille(){
+    
+}
+
+function gagnerLaCoupe(){
+
+}
+
