@@ -2,13 +2,17 @@ window.onload = function() {
     
     const urlParams = new URLSearchParams(window.location.search);
     const idTheme = urlParams.get('idTheme');
-    let choosenQuestionResponses = findAllQuestionResponses(idTheme);
+    let questionReponse;
     let indexQuestion = 0;
-    let questionReponse = choosenQuestionResponses[indexQuestion];
-    afficherQuestion();
-    changeBoutonValider();
-
-
+    let choosenQuestionResponses;
+    let questionAValider;
+    if (idTheme) {
+        choosenQuestionResponses = findAllQuestionResponses(idTheme);
+        questionReponse = choosenQuestionResponses[indexQuestion];
+        afficherQuestion();
+        questionAValider = true;
+        changeEtatBouton();
+    }
 
     function findAllQuestionResponses(id){
         console.log(id);
@@ -38,10 +42,6 @@ window.onload = function() {
             window.location.href = "../HTML/main.html?idTheme=" + id;
         });
     });
-
-
-
-
     
     function afficherQuestion(){
         let questionEl = document.getElementById('question'); // DIV qui contient la question à mon QUIZZ
@@ -74,23 +74,25 @@ window.onload = function() {
     }
 
 
-    function changeBoutonValider() {
+    function changeEtatBouton() {
         const buttonValider = document.getElementById('button');
-        buttonValider.innerHTML = "Je valide";
-        buttonValider.addEventListener("click", () => {
-            verifieReponse();
+        if (questionAValider) {
+            buttonValider.innerHTML = "Je valide";
+            document.getElementById('annonce-rep').innerHTML = "";
+            buttonValider.addEventListener("click", () => {
+                verifieReponse();
+            });
+        } else {
             buttonValider.innerHTML = "Question suivante";
             buttonValider.addEventListener("click", () => {
                 questionSuivante();
             });
-        });
+        }
     }
 
     function verifieReponse() {
         let bonneReponse = questionReponse.indexOfReponse;
         let reponsesProposees = questionReponse.reponsesPossibles;
-
-        document.getElementById('annonce-rep').innerHTML = "";
         let indexReponseChoisie = document.querySelector('input[name="reponse"]:checked').value;
         
         if(bonneReponse == indexReponseChoisie) {
@@ -102,10 +104,9 @@ window.onload = function() {
             div.innerHTML = 'La bonne réponse est :' + reponsesProposees[bonneReponse];
             div.style.color = 'red';
         }
+        questionAValider = false;
+        changeEtatBouton();
     }
-    
-
-    
 
     function questionSuivante(){
         indexQuestion++;
@@ -113,16 +114,6 @@ window.onload = function() {
         afficherQuestion();
         changeBoutonValider();
     }
-
-    // function checkQuestionSuivante() {
-    //     let result;
-    //     let buttonSuivant = document.getElementById('suivant');
-    //     buttonSuivant.onclick = function() {
-    //         questionSuivante();
-    //     } 
-    //     return result;
-    // }
-    // checkQuestionSuivante();
     
 }
 
