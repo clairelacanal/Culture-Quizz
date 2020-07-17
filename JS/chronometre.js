@@ -5,6 +5,7 @@ window.addEventListener("load", function(){
     setInterval(() => {
         counter--;
         afficherCouleur()
+        arretChrono()
       }, 1000);
 
     function afficherCouleur() {
@@ -25,7 +26,23 @@ window.addEventListener("load", function(){
     }
 
     function arretChrono() {
-        if()
+        const buttonValider = document.getElementById('button');
+        let div = document.getElementById('annonce-rep');
+        //let questionReponse = choosenQuestionResponses[indexQuestion];
+        //let bonneReponse = questionReponse.indexOfReponse;
+        //let reponsesProposees = questionReponse.reponsesPossibles;
+
+        if( counter === 0){
+            buttonValider.innerHTML = "Trop tard !";
+            buttonValider.style.backgroundColor = "red";
+            buttonValider.style.color = "white";
+            
+            div.innerHTML = 'La bonne réponse est :' + " " + reponsesProposees[bonneReponse];
+        }
+    }
+
+    function revenirAZero() {
+
     }
     
 }); 
