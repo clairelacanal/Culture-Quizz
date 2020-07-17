@@ -34,8 +34,9 @@ window.addEventListener("load", function(){
             buttonValider.style.backgroundColor = "red";
             buttonValider.style.color = "white";
             afficherBonneReponse();
-            stopChrono();
-            
+            buttonValider.onclick = function() {
+                stopChrono();
+            } 
         }
     }
 
