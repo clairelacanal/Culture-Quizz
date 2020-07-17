@@ -1,8 +1,9 @@
 
 let counter = 21;
+let intervalId;
 window.addEventListener("load", function(){
 
-    let intervalId = setInterval(() => {
+     intervalId = setInterval(() => {
         counter--;
         afficherCouleur()
         arretChrono()
@@ -45,7 +46,7 @@ window.addEventListener("load", function(){
     }
 
     function afficherBonneReponse() {
-        verifieReponse(); 
+       verifieReponse(); 
     }
 
     
