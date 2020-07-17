@@ -2,7 +2,7 @@
 let counter = 21;
 window.addEventListener("load", function(){
 
-    setInterval(() => {
+    let intervalId = setInterval(() => {
         counter--;
         afficherCouleur()
         arretChrono()
@@ -28,27 +28,25 @@ window.addEventListener("load", function(){
 
     function arretChrono() {
         const buttonValider = document.getElementById('button');
-        //let div = document.getElementById('annonce-rep');
-
-        //let questionReponse = choosenQuestionResponses[indexQuestion];
-        //let bonneReponse = questionReponse.indexOfReponse;
-        //let reponsesProposees = questionReponse.reponsesPossibles;
 
         if( counter === 0){
             buttonValider.innerHTML = "Trop tard !";
             buttonValider.style.backgroundColor = "red";
             buttonValider.style.color = "white";
-            //div.innerHTML = 'La bonne réponse est :' + " " + reponsesProposees[bonneReponse];
+            afficherBonneReponse();
+            stopChrono();
+            
         }
     }
 
-    function afficherBonneReponse() {
-        let bonneReponse = document.getElementById('annonce-rep');
+    function stopChrono() {
+        clearInterval(intervalId);
     }
 
-    //function revenirAZero() {
-      //  passerALaQuestionSuivante = true;
-        //clearTimeout(gridSelected);
-    //}
+    function afficherBonneReponse() {
+        verifieReponse(); 
+    }
+
+    
     
 }); 

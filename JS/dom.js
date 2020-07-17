@@ -118,7 +118,7 @@ window.onload = function() {
         indexQuestion++;
         questionReponse = choosenQuestionResponses[indexQuestion];
         afficherQuestion();
-        changeBoutonValider();
+        changeEtatBouton();
     }
     
 }
