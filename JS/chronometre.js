@@ -24,10 +24,12 @@ window.addEventListener("load", function(){
             gridSelected.style.backgroundColor = 'red';
         }
     }
+    
 
     function arretChrono() {
         const buttonValider = document.getElementById('button');
-        let div = document.getElementById('annonce-rep');
+        //let div = document.getElementById('annonce-rep');
+
         //let questionReponse = choosenQuestionResponses[indexQuestion];
         //let bonneReponse = questionReponse.indexOfReponse;
         //let reponsesProposees = questionReponse.reponsesPossibles;
@@ -36,13 +38,17 @@ window.addEventListener("load", function(){
             buttonValider.innerHTML = "Trop tard !";
             buttonValider.style.backgroundColor = "red";
             buttonValider.style.color = "white";
-            
-            div.innerHTML = 'La bonne réponse est :' + " " + reponsesProposees[bonneReponse];
+            //div.innerHTML = 'La bonne réponse est :' + " " + reponsesProposees[bonneReponse];
         }
     }
 
-    function revenirAZero() {
-
+    function afficherBonneReponse() {
+        let bonneReponse = document.getElementById('annonce-rep');
     }
+
+    //function revenirAZero() {
+      //  passerALaQuestionSuivante = true;
+        //clearTimeout(gridSelected);
+    //}
     
 }); 
