@@ -79,15 +79,13 @@ window.onload = function() {
         const buttonValider = document.getElementById('button');
         if (questionAValider) {
             buttonValider.innerHTML = "Je valide";
-            document.getElementById('annonce-rep').innerHTML = "";
-            buttonValider.addEventListener("click", () => {
-                verifieReponse();
-            });
+            buttonValider.removeEventListener("click", questionSuivante);
+            buttonValider.addEventListener("click", verifieReponse);
+            
         } else {
             buttonValider.innerHTML = "Question suivante";
-            buttonValider.addEventListener("click", () => {
-                questionSuivante();
-            });
+            buttonValider.removeEventListener("click", verifieReponse);
+            buttonValider.addEventListener("click",questionSuivante);
         }
     }
 
@@ -119,6 +117,7 @@ window.onload = function() {
         indexQuestion++;
         questionReponse = choosenQuestionResponses[indexQuestion];
         afficherQuestion();
+        questionAValider = true;
         changeEtatBouton();
     }
     
