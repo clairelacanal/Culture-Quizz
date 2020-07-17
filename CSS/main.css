@@ -131,3 +131,23 @@ button {
     text-transform: uppercase;
 }
 
+#question {
+    font-weight: 700;
+    padding-left: 1em;
+    padding-top: 0.8em;
+}
+
+#rep-possibles {
+    font-weight: 700;
+    line-height: 3em;
+}
+
+#chronometre{
+    display: flex;
+    flex-direction: row;
+}
+
+.grid {
+    width: 30px;
+    height: 16px;
+}

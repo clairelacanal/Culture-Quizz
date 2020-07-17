@@ -1,28 +1,31 @@
-//let counter = {};
-//window.addEventListener("load", function () {
-    //COUNTDOWN IN SECONDS
-    //counter.end = 21;
 
-    //Mon container
-    //counter.div = document.getElementById("compteur-numero");
+let counter = 21;
+window.addEventListener("load", function(){
 
-    //Start if no past end date
-    //if (counter.end > 0) {
-        //counter.ticker = setInterval(function () {
-            //Stop if passed end time
-            //counter.end--;
-            //if (counter.end <= 0) {
-                //clearInterval(counter.ticker);
-                //counter.end = "Perdu";
-                //document.getElementById("compteur-numero").style.color = '#e74c3c';
-                //document.getElementById("compteur-numero").style.fontSize = '30px';
-            //}
+    setInterval(() => {
+        counter--;
+        afficherCouleur()
+      }, 1000);
 
-            //Calculate remaining time
-            //let count = counter.end;
+    function afficherCouleur() {
+        let gridSelected;
+        if (counter < 21) {
+            let numGrid = 21 - counter;
+            let gridName = "#grid" + numGrid;
+            gridSelected = document.querySelector(gridName);
+        }
 
-            //Update HTML
-            //counter.div.innerHTML = counter.end;
-        //}, 1000);
-    //}
-//})
+        if(counter < 21 && counter > 14) {
+            gridSelected.style.backgroundColor = 'green';
+        }else if(counter <= 14 && counter > 7 ) {
+            gridSelected.style.backgroundColor = 'orange';
+        }else if(counter <= 7 && counter > 0) {
+            gridSelected.style.backgroundColor = 'red';
+        }
+    }
+
+    function arretChrono() {
+        if()
+    }
+    
+}); 

@@ -99,10 +99,16 @@ window.onload = function() {
             let div = document.getElementById('annonce-rep');
             div.innerHTML = 'Bonne réponse !';
             div.style.color = 'green';
+            div.style.fontWeight = 700;
+            div.style.textAlign = "center";
+            
         } else {
             let div = document.getElementById('annonce-rep');
-            div.innerHTML = 'La bonne réponse est :' + reponsesProposees[bonneReponse];
+            div.innerHTML = 'La bonne réponse est :' + " " + reponsesProposees[bonneReponse];
             div.style.color = 'red';
+            div.style.fontWeight = 700;
+            div.style.textAlign = "center";
+           
         }
         questionAValider = false;
         changeEtatBouton();
