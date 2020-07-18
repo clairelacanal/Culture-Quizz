@@ -6,7 +6,7 @@ let intervalId;
      intervalId = setInterval(() => {
         counter--;
         afficherCouleur()
-        arretChrono()
+        buttonChangementText()
       }, 1000);
 
     function afficherCouleur() {
@@ -25,24 +25,14 @@ let intervalId;
             gridSelected.style.backgroundColor = 'red';
         }
     }
-    
-    
-    
 
-
-function arretChrono() {
+function buttonChangementText() {
     const buttonValider = document.getElementById('button');
-
     if( counter === 0){
         buttonValider.innerHTML = "Trop tard !";
         buttonValider.style.backgroundColor = "red";
         buttonValider.style.color = "white";
-        afficherBonneReponse();
-        buttonValider.onclick = function() {
-            stopChrono();
-            questionSuivante();
-            changeEtatBouton();
-        } 
+        
     }
 }
 
@@ -50,7 +40,20 @@ function stopChrono() {
     clearInterval(intervalId);
 }
 
+function resetChrono() {
+    const grids = document.querySelectorAll('.grid');
+        const gridsArr = Array.from(grids);
+        gridsArr.forEach(function (el) {
+           el.style.backgroundColor = 'transparent'; 
+        })   
+}
+
+
+
+
 function afficherBonneReponse() {
    verifieReponse(); 
 }
+
+
 

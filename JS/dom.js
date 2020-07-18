@@ -107,7 +107,7 @@
             div.innerHTML = 'La bonne réponse est :' + " " + reponsesProposees[bonneReponse];
             div.style.color = 'red';
             div.style.fontWeight = 700;
-            div.style.textAlign = "center";
+            div.style.textAlign = "center"; 
             
            
         }
@@ -115,14 +115,23 @@
         changeEtatBouton();
     }
 
+
     function questionSuivante(){
         indexQuestion++;
         questionReponse = choosenQuestionResponses[indexQuestion];
         afficherQuestion();
+        resetChrono();
         questionAValider = true;
         let div = document.getElementById('annonce-rep');
         div.innerHTML = "";
         changeEtatBouton();
+        
+    }
+
+    button.onclick = function() {
+        if(button.className === 'btn reset') {
+            afficherCouleur();
+        }
     }
     
 
