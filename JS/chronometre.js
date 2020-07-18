@@ -7,6 +7,8 @@ let intervalId;
         counter--;
         afficherCouleur()
         buttonChangementText()
+        
+        
       }, 1000);
 
     function afficherCouleur() {
@@ -37,23 +39,25 @@ function buttonChangementText() {
 }
 
 function stopChrono() {
-    clearInterval(intervalId);
+    let btn = document.getElementById('button');
+    btn.onclick = function() {
+        clearInterval(intervalId);
+    }
 }
+stopChrono();
 
 function resetChrono() {
     const grids = document.querySelectorAll('.grid');
         const gridsArr = Array.from(grids);
         gridsArr.forEach(function (el) {
-           el.style.backgroundColor = 'transparent'; 
+            if(counter = 21) {
+                el.style.backgroundColor = 'transparent';
+            } 
         })   
 }
 
 
 
-
-function afficherBonneReponse() {
-   verifieReponse(); 
-}
 
 
 

@@ -82,10 +82,12 @@
             buttonValider.removeEventListener("click", questionSuivante);
             buttonValider.addEventListener("click", verifieReponse);
             
+            
         } else {
             buttonValider.innerHTML = "Question suivante";
             buttonValider.removeEventListener("click", verifieReponse);
             buttonValider.addEventListener("click",questionSuivante);
+            
         }
     }
 
@@ -102,17 +104,20 @@
             div.style.textAlign = "center";
             
             
+            
         } else {
             let div = document.getElementById('annonce-rep');
             div.innerHTML = 'La bonne réponse est :' + " " + reponsesProposees[bonneReponse];
             div.style.color = 'red';
             div.style.fontWeight = 700;
-            div.style.textAlign = "center"; 
+            div.style.textAlign = "center";
+             
             
            
         }
         questionAValider = false;
         changeEtatBouton();
+        
     }
 
 
@@ -128,11 +133,7 @@
         
     }
 
-    button.onclick = function() {
-        if(button.className === 'btn reset') {
-            afficherCouleur();
-        }
-    }
+  
     
 
 
