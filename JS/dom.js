@@ -1,5 +1,5 @@
 
-window.onload = function() {
+
     
     const urlParams = new URLSearchParams(window.location.search);
     const idTheme = urlParams.get('idTheme');
@@ -101,12 +101,14 @@ window.onload = function() {
             div.style.fontWeight = 700;
             div.style.textAlign = "center";
             
+            
         } else {
             let div = document.getElementById('annonce-rep');
             div.innerHTML = 'La bonne réponse est :' + " " + reponsesProposees[bonneReponse];
             div.style.color = 'red';
             div.style.fontWeight = 700;
             div.style.textAlign = "center";
+            
            
         }
         questionAValider = false;
@@ -118,10 +120,12 @@ window.onload = function() {
         questionReponse = choosenQuestionResponses[indexQuestion];
         afficherQuestion();
         questionAValider = true;
+        let div = document.getElementById('annonce-rep');
+        div.innerHTML = "";
         changeEtatBouton();
     }
     
-}
+
 
 
 

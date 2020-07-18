@@ -1,7 +1,7 @@
 
 let counter = 21;
 let intervalId;
-window.addEventListener("load", function(){
+
 
      intervalId = setInterval(() => {
         counter--;
@@ -26,29 +26,31 @@ window.addEventListener("load", function(){
         }
     }
     
-
-    function arretChrono() {
-        const buttonValider = document.getElementById('button');
-
-        if( counter === 0){
-            buttonValider.innerHTML = "Trop tard !";
-            buttonValider.style.backgroundColor = "red";
-            buttonValider.style.color = "white";
-            afficherBonneReponse();
-            buttonValider.onclick = function() {
-                stopChrono();
-            } 
-        }
-    }
-
-    function stopChrono() {
-        clearInterval(intervalId);
-    }
-
-    function afficherBonneReponse() {
-       verifieReponse(); 
-    }
-
     
     
-}); 
+
+
+function arretChrono() {
+    const buttonValider = document.getElementById('button');
+
+    if( counter === 0){
+        buttonValider.innerHTML = "Trop tard !";
+        buttonValider.style.backgroundColor = "red";
+        buttonValider.style.color = "white";
+        afficherBonneReponse();
+        buttonValider.onclick = function() {
+            stopChrono();
+            questionSuivante();
+            changeEtatBouton();
+        } 
+    }
+}
+
+function stopChrono() {
+    clearInterval(intervalId);
+}
+
+function afficherBonneReponse() {
+   verifieReponse(); 
+}
+
