@@ -97,6 +97,9 @@ function restartButton(){
     buttonRestart.innerHTML = "Je valide";
     buttonRestart.style.backgroundColor = "#004445";
     buttonRestart.style.color = "#f8b400";
+    
 }
+
+
 
 

@@ -136,6 +136,16 @@ function draw() {
      let coupeX = 525;
      let coupeY = 20;
 
+
+     // Afficher image 4
+     const ampoule = new Image();
+     ampoule.onload = function () {
+         ctx.drawImage(ampoule, ampouleX, ampouleY, 70, 70);
+     }
+     ampoule.src = '../images/light-bulb-1926533_640.png'; // Telechargement (1s)
+     let ampouleX = 0;
+     let ampouleY = 410;
+
      
     
 }
