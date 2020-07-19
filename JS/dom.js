@@ -72,6 +72,7 @@
             label.innerHTML = reponsesPossibles[i];
             div.appendChild(label);
         }
+        stopChrono();
     }
 
 
@@ -126,6 +127,7 @@
         questionReponse = choosenQuestionResponses[indexQuestion];
         afficherQuestion();
         resetChrono();
+        startChrono ();
         questionAValider = true;
         let div = document.getElementById('annonce-rep');
         div.innerHTML = "";

@@ -2,31 +2,22 @@
 let counter = 21;
 let intervalId;
 
-
-     intervalId = setInterval(() => {
-        counter--;
-        afficherCouleur()
-        buttonChangementText()
-        
-        
-      }, 1000);
-
-    function afficherCouleur() {
-        let gridSelected;
-        if (counter < 21) {
-            let numGrid = 21 - counter;
-            let gridName = "#grid" + numGrid;
-            gridSelected = document.querySelector(gridName);
-        }
-
-        if(counter < 21 && counter > 14) {
-            gridSelected.style.backgroundColor = 'green';
-        }else if(counter <= 14 && counter > 7 ) {
-            gridSelected.style.backgroundColor = 'orange';
-        }else if(counter <= 7 && counter > 0) {
-            gridSelected.style.backgroundColor = 'red';
-        }
+function afficherCouleur() {
+    let gridSelected;
+    if (counter < 21) {
+        let numGrid = 21 - counter;
+        let gridName = "#grid" + numGrid;
+        gridSelected = document.querySelector(gridName);
     }
+
+    if(counter < 21 && counter > 14) {
+        gridSelected.style.backgroundColor = 'green';
+    }else if(counter <= 14 && counter > 7 ) {
+        gridSelected.style.backgroundColor = 'orange';
+    }else if(counter <= 7 && counter > 0) {
+        gridSelected.style.backgroundColor = 'red';
+    }
+}
 
 function buttonChangementText() {
     const buttonValider = document.getElementById('button');
@@ -34,6 +25,8 @@ function buttonChangementText() {
         buttonValider.innerHTML = "Trop tard !";
         buttonValider.style.backgroundColor = "red";
         buttonValider.style.color = "white";
+        afficherReponseChrono0();
+        
         
     }
 }
@@ -44,7 +37,6 @@ function stopChrono() {
         clearInterval(intervalId);
     }
 }
-stopChrono();
 
 function resetChrono() {
     const grids = document.querySelectorAll('.grid');
@@ -56,8 +48,39 @@ function resetChrono() {
         })   
 }
 
+function startChrono() {
+    resetChrono() // reset des cases
+
+    // demarre mon anim
+    intervalId = setInterval(() => {
+        counter--;
+        afficherCouleur()
+        buttonChangementText()
+    }, 1000);
+}
+startChrono()
 
 
 
+function afficherReponseChrono0() {
+    let div = document.getElementById('annonce-rep')
+    let choosenQuestionResponses = findAllQuestionResponses(idTheme);
+    let questionReponse = choosenQuestionResponses[indexQuestion];
+    let bonneReponse = questionReponse.indexOfReponse;
+    let reponsesProposees = questionReponse.reponsesPossibles;
 
+    if(counter === 0) {
+        div.innerHTML = 'La bonne réponse est :' + " " + reponsesProposees[bonneReponse];
+        div.style.color = 'red';
+        div.style.fontWeight = 700;
+    }
+}
+
+function buttonQuestionSuivante() {
+    const buttonTropTard = document.getElementById('button');
+    buttonTropTard.innerHTML = "Question suivante";
+    buttonTropTard.removeEventListener("click", verifieReponse);
+    buttonTropTard.addEventListener("click",questionSuivante);
+}
+afficherReponseChrono0();
 
