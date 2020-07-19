@@ -26,10 +26,15 @@ function buttonChangementText() {
         buttonValider.style.backgroundColor = "red";
         buttonValider.style.color = "white";
         afficherReponseChrono0();
+
+        intervalId = setInterval(() => {
+            buttonQuestionSuivante();
+        }, 2000);
+    }
         
         
     }
-}
+
 
 function stopChrono() {
     let btn = document.getElementById('button');
@@ -73,14 +78,17 @@ function afficherReponseChrono0() {
         div.innerHTML = 'La bonne réponse est :' + " " + reponsesProposees[bonneReponse];
         div.style.color = 'red';
         div.style.fontWeight = 700;
+        
     }
 }
 
 function buttonQuestionSuivante() {
     const buttonTropTard = document.getElementById('button');
     buttonTropTard.innerHTML = "Question suivante";
-    buttonTropTard.removeEventListener("click", verifieReponse);
+    buttonTropTard.style.backgroundColor = "red";
+    buttonTropTard.style.color = "white";
+    buttonTropTard.removeEventListener("click", afficherReponseChrono0);
     buttonTropTard.addEventListener("click",questionSuivante);
 }
-afficherReponseChrono0();
+
 
