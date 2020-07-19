@@ -87,8 +87,16 @@ function buttonQuestionSuivante() {
     buttonTropTard.innerHTML = "Question suivante";
     buttonTropTard.style.backgroundColor = "red";
     buttonTropTard.style.color = "white";
-    buttonTropTard.removeEventListener("click", afficherReponseChrono0);
+    buttonTropTard.removeEventListener("click", verifieReponse);
     buttonTropTard.addEventListener("click",questionSuivante);
+       
+}
+
+function restartButton(){
+    const buttonRestart = document.getElementById('button');
+    buttonRestart.innerHTML = "Je valide";
+    buttonRestart.style.backgroundColor = "#004445";
+    buttonRestart.style.color = "#f8b400";
 }
 
 

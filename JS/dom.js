@@ -132,6 +132,7 @@
         let div = document.getElementById('annonce-rep');
         div.innerHTML = "";
         changeEtatBouton();
+        restartButton(); 
         
     }
 
