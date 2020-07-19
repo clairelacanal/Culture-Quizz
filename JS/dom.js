@@ -97,12 +97,14 @@
         let reponsesProposees = questionReponse.reponsesPossibles;
         let indexReponseChoisie = document.querySelector('input[name="reponse"]:checked').value;
         
+       
         if(bonneReponse == indexReponseChoisie) {
             let div = document.getElementById('annonce-rep');
             div.innerHTML = 'Bonne réponse !';
             div.style.color = 'green';
             div.style.fontWeight = 700;
             div.style.textAlign = "center";
+             
             
             
             
@@ -132,12 +134,13 @@
         let div = document.getElementById('annonce-rep');
         div.innerHTML = "";
         changeEtatBouton();
-        restartButton(); 
-        
-        
+        restartButton();    
     }
 
-  
+    
+
+    
+    
     
 
 

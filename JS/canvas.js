@@ -1,9 +1,9 @@
-
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
 
 
 function draw() {
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
+    
     ctx.fillStyle = '#f8b400'; // jaune
     ctx.fillRect(125, 430, 50, 50);
     ctx.fillRect(225, 430, 50, 50);
@@ -102,11 +102,7 @@ function draw() {
     ctx.fillStyle = '#f8b400'; // jaune
     ctx.fillRect(475, 80, 50, 50);
 
-    // Afficher score
-
-    ctx.fillStyle = 'black';
-    ctx.font = '30px Arial';
-    ctx.fillText('Score :', 20, 40);
+   
 
     // Afficher image 1
     const medaille1 = new Image();
@@ -146,17 +142,39 @@ function draw() {
      let ampouleX = 0;
      let ampouleY = 410;
 
+    }
      
-    
-}
-
 draw();
 
-//let score = 0;
 
-//function ajouterMarche(){ 
- //   score++;
-//}
+// Afficher score
+var score = 0;
+
+function addPoint() {
+    let bonneReponse = questionReponse.indexOfReponse;
+    let indexReponseChoisie = document.querySelector('input[name="reponse"]:checked').value;
+    if(bonneReponse == indexReponseChoisie) {
+        score++;
+    }
+}
+addPoint();
+
+function drawScore() {
+  ctx.fillStyle = 'black';
+  ctx.font = '30px Arial';
+  ctx.fillText(`Score :${score}`, 20, 40);
+}
+drawScore();
+
+
+
+
+
+
+
+
+
+
 
 //function gagnerUneMedaille(){
     
