@@ -142,29 +142,32 @@ function draw() {
      let ampouleX = 0;
      let ampouleY = 410;
 
+    // Afficher score
+
+    ctx.fillStyle = 'black';
+    ctx.font = '30px Arial';
+    ctx.fillText(`Score: ${score}`, 20, 40);
+
+    var score = 0;
+
+    function addPoint() {
+        let choosenQuestionResponses = findAllQuestionResponses(idTheme);
+        let questionReponse = choosenQuestionResponses[indexQuestion];
+        let bonneReponse = questionReponse.indexOfReponse;
+    
+        let indexReponseChoisie = document.querySelector('input[name="reponse"]:checked').value;
+        if(bonneReponse == indexReponseChoisie) {
+            score++;
+        }
+    }
+    addPoint();
     }
      
 draw();
 
 
-// Afficher score
-var score = 0;
 
-function addPoint() {
-    let bonneReponse = questionReponse.indexOfReponse;
-    let indexReponseChoisie = document.querySelector('input[name="reponse"]:checked').value;
-    if(bonneReponse == indexReponseChoisie) {
-        score++;
-    }
-}
-addPoint();
 
-function drawScore() {
-  ctx.fillStyle = 'black';
-  ctx.font = '30px Arial';
-  ctx.fillText(`Score :${score}`, 20, 40);
-}
-drawScore();
 
 
 
