@@ -3,6 +3,8 @@ const ctx = canvas.getContext('2d');
 
 
 function draw() {
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     
     ctx.fillStyle = '#f8b400'; // jaune
     ctx.fillRect(125, 430, 50, 50);
@@ -146,24 +148,20 @@ function draw() {
 
     ctx.fillStyle = 'black';
     ctx.font = '30px Arial';
-    ctx.fillText(`Score: ${score}`, 20, 40);
+    ctx.fillText('Score:'+ score, 20, 40);
 
-    var score = 0;
-
-    function addPoint() {
-        let choosenQuestionResponses = findAllQuestionResponses(idTheme);
-        let questionReponse = choosenQuestionResponses[indexQuestion];
-        let bonneReponse = questionReponse.indexOfReponse;
-    
-        let indexReponseChoisie = document.querySelector('input[name="reponse"]:checked').value;
-        if(bonneReponse == indexReponseChoisie) {
-            score++;
-        }
-    }
-    addPoint();
     }
      
 draw();
+
+let y = 50;
+let jump_y = y;
+
+
+
+function jumpLight() {
+
+}
 
 
 

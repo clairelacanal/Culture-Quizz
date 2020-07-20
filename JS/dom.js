@@ -7,6 +7,7 @@
     let indexQuestion = 0;
     let choosenQuestionResponses;
     let questionAValider;
+    let score = 0;
     if (idTheme) {
         choosenQuestionResponses = findAllQuestionResponses(idTheme);
         questionReponse = choosenQuestionResponses[indexQuestion];
@@ -73,6 +74,7 @@
             div.appendChild(label);
         }
         stopChrono();
+       
     }
 
 
@@ -104,10 +106,10 @@
             div.style.color = 'green';
             div.style.fontWeight = 700;
             div.style.textAlign = "center";
-             
+            score++;
+            draw();
             
-            
-            
+    
         } else {
             let div = document.getElementById('annonce-rep');
             div.innerHTML = 'La bonne réponse est :' + " " + reponsesProposees[bonneReponse];
@@ -137,12 +139,18 @@
         restartButton();    
     }
 
-    
+    function supprimerPartieDerniereQuestion() { // supprimer la page aprés la 20eme question
+        let divQuestion = document.getElementById('question');
+        let divReponses = document.getElementById('reponses');
+        for(let i = 0; i < questionReponse.length; i++) {
+            let partieASupprimer = questionReponse.pop();
+        }
+        
+    }
+
+    supprimerPartieDerniereQuestion();
 
     
-    
-    
-
 
 
 
