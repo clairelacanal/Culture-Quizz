@@ -27,7 +27,7 @@ function buttonChangementText() {
         buttonValider.style.color = "white";
         afficherReponseChrono0();
 
-        intervalId = setInterval(() => {
+        setTimeout(() => {
             buttonQuestionSuivante();
         }, 2000);
     }
