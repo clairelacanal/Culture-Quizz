@@ -127,28 +127,32 @@
 
 
     function questionSuivante(){
-        indexQuestion++;
-        questionReponse = choosenQuestionResponses[indexQuestion];
-        afficherQuestion();
-        resetChrono();
-        startChrono ();
-        questionAValider = true;
-        let div = document.getElementById('annonce-rep');
-        div.innerHTML = "";
-        changeEtatBouton();
-        restartButton();    
-    }
-
-    function supprimerPartieDerniereQuestion() { // supprimer la page aprés la 20eme question
-        let divQuestion = document.getElementById('question');
-        let divReponses = document.getElementById('reponses');
-        for(let i = 0; i < questionReponse.length; i++) {
-            let partieASupprimer = questionReponse.pop();
+        let chrono = document.getElementById('chronometre');
+        let question = document.getElementById('question');
+        let reponses = document.getElementById('reponses');
+        let button = document.getElementById('button');
+        if(indexQuestion>=19) {
+            chrono.remove();
+            question.remove();
+            reponses.remove();
+            button.remove();
+        }else{
+            indexQuestion++;
+            questionReponse = choosenQuestionResponses[indexQuestion];
+            afficherQuestion();
+            resetChrono();
+            startChrono ();
+            questionAValider = true;
+            let div = document.getElementById('annonce-rep');
+            div.innerHTML = "";
+            changeEtatBouton();
+            restartButton();  
         }
-        
+          
     }
 
-    supprimerPartieDerniereQuestion();
+    
+
 
     
 
