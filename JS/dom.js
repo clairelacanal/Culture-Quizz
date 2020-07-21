@@ -136,6 +136,7 @@
             question.remove();
             reponses.remove();
             button.remove();
+            annonceScore();
         }else{
             indexQuestion++;
             questionReponse = choosenQuestionResponses[indexQuestion];
@@ -151,7 +152,50 @@
           
     }
 
-    
+    function annonceScore() {
+        let div = document.getElementById('annonce-score');
+            div.style.width = '600px';
+            div.style.height = '31.2em';
+            div.style.backgroundColor = '#004445';
+
+        let annonce = document.getElementById('annonce');
+            annonce.style.backgroundColor = '#004445';
+            annonce.style.color = '#f8b400';
+            annonce.style.fontWeight = '700';
+            annonce.style.marginTop = '3em';
+            annonce.style.height = '3em';
+
+        let phraseRejouer = document.getElementById('rejouer');
+            phraseRejouer.style.backgroundColor = '#004445';
+            phraseRejouer.style.color = '#f8b400';
+            phraseRejouer.style.fontWeight = '700';
+            phraseRejouer.style.height = '3em';
+
+        let rejouerButton = document.createElement('button');
+            rejouerButton.appendChild(document.createTextNode(" JE REJOUE"));
+        let divButton = document.getElementById('button-rejouer');
+            divButton.appendChild(rejouerButton);
+            rejouerButton.style.backgroundColor = "#2c786c";
+            rejouerButton.style.color = '#f8b400';
+            
+
+       
+        if(score >=10) {
+          
+            annonce.innerHTML = `Bravo, ton score est de ${score} !`;
+            phraseRejouer.innerHTML = 'Rejoue et tente de faire encore mieux !';
+            
+        }else if(score < 10){
+           
+            
+            annonce.innerHTML = `Malheureusement, ton score est de ${score} !`;
+            phraseRejouer.innerHTML = 'Tu peux rejouer et tenter de faire mieux !';
+           
+            
+        }
+        
+
+    }
 
 
     
