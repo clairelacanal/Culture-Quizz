@@ -177,19 +177,37 @@
             divButton.appendChild(rejouerButton);
             rejouerButton.style.backgroundColor = "#2c786c";
             rejouerButton.style.color = '#f8b400';
-            
 
+           
+         
        
         if(score >=10) {
           
             annonce.innerHTML = `Bravo, ton score est de ${score} !`;
             phraseRejouer.innerHTML = 'Rejoue et tente de faire encore mieux !';
+            let imageGood = document.createElement('img');
+            imageGood.setAttribute("src", "../images/light-bulb-1926533_640.png");
+            let divImage = document.getElementById('div-image');
+            divImage.appendChild(imageGood);
+            imageGood.style.width = '250px';
+            imageGood.style.height = '250px';
+            imageGood.style.marginTop = '2em';
+            imageGood.style.marginRight = '0.5em';
+            
             
         }else if(score < 10){
            
             
             annonce.innerHTML = `Malheureusement, ton score est de ${score} !`;
             phraseRejouer.innerHTML = 'Tu peux rejouer et tenter de faire mieux !';
+            let imageBad = document.createElement('img');
+            imageBad.setAttribute("src", "../images/bulb-2029707_640.png");
+            let divImage = document.getElementById('div-image');
+            divImage.appendChild(imageBad);
+            imageBad.style.width = '250px';
+            imageBad.style.height = '250px';
+            imageBad.style.marginTop = '2em';
+            imageBad.style.marginRight = '0.5em';
            
             
         }
