@@ -141,8 +141,7 @@ function draw() {
          ctx.drawImage(ampoule, ampouleX, ampouleY, 70, 70);
      }
      ampoule.src = '../images/light-bulb-1926533_640.png'; // Telechargement (1s)
-     let ampouleX = 0;
-     let ampouleY = 410;
+    
 
     // Afficher score
 
@@ -154,14 +153,9 @@ function draw() {
      
 draw();
 
-let y = 50;
-let jump_y = y;
 
 
 
-function jumpLight() {
-
-}
 
 
 

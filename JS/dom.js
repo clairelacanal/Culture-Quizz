@@ -8,6 +8,9 @@
     let choosenQuestionResponses;
     let questionAValider;
     let score = 0;
+    let ampouleX = 0;
+    let ampouleY = 410;
+
     if (idTheme) {
         choosenQuestionResponses = findAllQuestionResponses(idTheme);
         questionReponse = choosenQuestionResponses[indexQuestion];
@@ -107,7 +110,11 @@
             div.style.fontWeight = 700;
             div.style.textAlign = "center";
             score++;
+            if(score % 2 === 0) {
+                jumpLight();
+            }
             draw();
+            
             
     
         } else {
@@ -124,6 +131,17 @@
         changeEtatBouton();
         
     }
+
+    function jumpLight() {
+        let y = -50;
+        let jump_y = y;
+        let x = 50;
+        let moveLeft_x = x;
+        ampouleY = ampouleY + y;
+        ampouleX = ampouleX + x;
+        
+    }
+    
 
 
     function questionSuivante(){
