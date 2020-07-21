@@ -110,9 +110,10 @@
             div.style.fontWeight = 700;
             div.style.textAlign = "center";
             score++;
-            if(score % 2 === 0) {
-                jumpLight();
+            if(score === 3|| score === 6) {
+                playSoundMedaille();
             }
+            jumpLight();
             draw();
             
             
@@ -123,9 +124,7 @@
             div.style.color = 'red';
             div.style.fontWeight = 700;
             div.style.textAlign = "center";
-             
-            
-           
+       
         }
         questionAValider = false;
         changeEtatBouton();
@@ -134,12 +133,21 @@
 
     function jumpLight() {
         let y = -50;
-        let jump_y = y;
         let x = 50;
-        let moveLeft_x = x;
-        ampouleY = ampouleY + y;
-        ampouleX = ampouleX + x;
         
+        if(score > 8 && score <= 10) {
+            ampouleX = ampouleX + 50;
+            ampouleY = ampouleY + 0;
+        }else{
+            ampouleY = ampouleY + y;
+            ampouleX = ampouleX + x;
+        }
+        
+    }
+
+    function playSoundMedaille() {
+        let audio = new Audio('../SOUND/274177__littlerobotsoundfactory__jingle-win-synth-03.wav');
+        audio.play();
     }
     
 
@@ -149,7 +157,7 @@
         let question = document.getElementById('question');
         let reponses = document.getElementById('reponses');
         let button = document.getElementById('button');
-        if(indexQuestion>=19) {
+        if(indexQuestion>= 9) {
             chrono.remove();
             question.remove();
             reponses.remove();
@@ -199,7 +207,7 @@
            
          
        
-        if(score >=10) {
+        if(score >=5) {
           
             annonce.innerHTML = `Bravo, ton score est de ${score} !`;
             phraseRejouer.innerHTML = 'Rejoue et tente de faire encore mieux !';
@@ -213,7 +221,7 @@
             imageGood.style.marginRight = '0.5em';
             
             
-        }else if(score < 10){
+        }else if(score < 5){
            
             
             annonce.innerHTML = `Malheureusement, ton score est de ${score} !`;
