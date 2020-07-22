@@ -113,6 +113,9 @@
             if(score === 3|| score === 6) {
                 playSoundMedaille();
             }
+            if(score === 10){
+                playSoundCoupe();
+            }
             jumpLight();
             draw();
             
@@ -147,6 +150,11 @@
 
     function playSoundMedaille() {
         let audio = new Audio('../SOUND/274177__littlerobotsoundfactory__jingle-win-synth-03.wav');
+        audio.play();
+    }
+
+    function playSoundCoupe() {
+        let audio = new Audio('../SOUND/456968__funwithsound__success-resolution-video-game-fanfare-sound-effect.mp3');
         audio.play();
     }
     
@@ -240,6 +248,8 @@
         
 
     }
+
+    
 
 
     
