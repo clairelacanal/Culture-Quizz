@@ -90,11 +90,15 @@
             
             
         } else {
-            buttonValider.innerHTML = "Question suivante";
-            buttonValider.removeEventListener("click", verifieReponse);
-            buttonValider.addEventListener("click",questionSuivante);
-            
-        }
+            if(indexQuestion < 9) {
+                buttonValider.innerHTML = "Question suivante";
+                buttonValider.removeEventListener("click", verifieReponse);
+                buttonValider.addEventListener("click",questionSuivante);
+            }else{
+                affichageLastQuestion();
+            }
+
+        } 
     }
 
     function verifieReponse() {
@@ -127,7 +131,6 @@
             div.style.color = 'red';
             div.style.fontWeight = 700;
             div.style.textAlign = "center";
-       
         }
         questionAValider = false;
         changeEtatBouton();
@@ -181,7 +184,8 @@
             let div = document.getElementById('annonce-rep');
             div.innerHTML = "";
             changeEtatBouton();
-            restartButton();  
+            restartButton();
+             
         }
           
     }
@@ -253,30 +257,22 @@
 
         function affichageLastQuestion() {
             let button = document.getElementById('button');
-            if(indexQuestion === 9){
-                button.onclick = function() {
-                    button.innerHTML = 'Le jeu est terminé !';
+                    button.onclick = function() {
+                        button.innerHTML = 'Le jeu est terminé !';
+                        console.log('coucou');
+                    }
+                    setTimeout(() => {
+                        buttonQuestionSuivante();
+                    }, 2000);
                 }
-                setTimeout(() => {
-                    annonceScore();
-                }, 2000);
-            }
                 
-        }
-        affichageLastQuestion();
+            
+                
         
-        function selectionnerReponse(){
-        let button = document.getElementById('button');
-        let rep = document.getElementById('annonce-rep');
-        let indexReponseChoisie = document.querySelector('input[name="reponse"]:checked').value;
-        indexReponseChoisie = true;
-            if(indexReponseChoisie == false){
-                button.onclick = function() {
-                    rep.innerHTML = 'Veuillez sélectionner une réponse avant de valider !';
-                }
-            }
-        }
-        selectionnerReponse(); 
+       
+        
+       
+        
 
 
 
