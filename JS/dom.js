@@ -212,47 +212,71 @@
             rejouerButton.style.backgroundColor = "#2c786c";
             rejouerButton.style.color = '#f8b400';
 
-           
-         
-       
-        if(score >=5) {
-          
-            annonce.innerHTML = `Bravo, ton score est de ${score} !`;
-            phraseRejouer.innerHTML = 'Rejoue et tente de faire encore mieux !';
-            let imageGood = document.createElement('img');
-            imageGood.setAttribute("src", "../images/light-bulb-1926533_640.png");
-            let divImage = document.getElementById('div-image');
-            divImage.appendChild(imageGood);
-            imageGood.style.width = '250px';
-            imageGood.style.height = '250px';
-            imageGood.style.marginTop = '2em';
-            imageGood.style.marginRight = '0.5em';
+            if(score === 10) {
+                annonce.innerHTML = `Tu as obtenu ${score} ! C'est le meilleur score !`;
+                phraseRejouer.innerHTML = 'Tu peux rejouer et tenter de réitérer ton exploit!';
+                let imageGood = document.createElement('img');
+                imageGood.setAttribute("src", "../images/light-bulb-1926533_640.png");
+                let divImage = document.getElementById('div-image');
+                divImage.appendChild(imageGood);
+                imageGood.style.width = '250px';
+                imageGood.style.height = '250px';
+                imageGood.style.marginTop = '2em';
+                imageGood.style.marginRight = '0.5em';
             
-            
-        }else if(score < 5){
-           
-            
-            annonce.innerHTML = `Malheureusement, ton score est de ${score} !`;
-            phraseRejouer.innerHTML = 'Tu peux rejouer et tenter de faire mieux !';
-            let imageBad = document.createElement('img');
-            imageBad.setAttribute("src", "../images/bulb-2029707_640.png");
-            let divImage = document.getElementById('div-image');
-            divImage.appendChild(imageBad);
-            imageBad.style.width = '250px';
-            imageBad.style.height = '250px';
-            imageBad.style.marginTop = '2em';
-            imageBad.style.marginRight = '0.5em';
-           
-            
-        }
+            }else if(score >=5) {
+                annonce.innerHTML = `Bravo, ton score est de ${score} !`;
+                phraseRejouer.innerHTML = 'Rejoue et tente de faire encore mieux !';
+                let imageGood = document.createElement('img');
+                imageGood.setAttribute("src", "../images/light-bulb-1926533_640.png");
+                let divImage = document.getElementById('div-image');
+                divImage.appendChild(imageGood);
+                imageGood.style.width = '250px';
+                imageGood.style.height = '250px';
+                imageGood.style.marginTop = '2em';
+                imageGood.style.marginRight = '0.5em';
         
-
+            
+            }else if(score < 5){
+                annonce.innerHTML = `Malheureusement, ton score est de ${score} !`;
+                phraseRejouer.innerHTML = 'Tu peux rejouer et tenter de faire mieux !';
+                let imageBad = document.createElement('img');
+                imageBad.setAttribute("src", "../images/bulb-2029707_640.png");
+                let divImage = document.getElementById('div-image');
+                divImage.appendChild(imageBad);
+                imageBad.style.width = '250px';
+                imageBad.style.height = '250px';
+                imageBad.style.marginTop = '2em';
+                imageBad.style.marginRight = '0.5em';
+        }
     }
 
-    
-
-
-    
+        function affichageLastQuestion() {
+            let button = document.getElementById('button');
+            if(indexQuestion === 9){
+                button.onclick = function() {
+                    button.innerHTML = 'Le jeu est terminé !';
+                }
+                setTimeout(() => {
+                    annonceScore();
+                }, 2000);
+            }
+                
+        }
+        affichageLastQuestion();
+        
+        function selectionnerReponse(){
+        let button = document.getElementById('button');
+        let rep = document.getElementById('annonce-rep');
+        let indexReponseChoisie = document.querySelector('input[name="reponse"]:checked').value;
+        indexReponseChoisie = true;
+            if(indexReponseChoisie == false){
+                button.onclick = function() {
+                    rep.innerHTML = 'Veuillez sélectionner une réponse avant de valider !';
+                }
+            }
+        }
+        selectionnerReponse(); 
 
 
 
