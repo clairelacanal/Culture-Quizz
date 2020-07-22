@@ -10,6 +10,12 @@
     let score = 0;
     let ampouleX = 0;
     let ampouleY = 410;
+    let medaille1X = 185;
+    let medaille1Y = 280;
+    let medaille2X = 335;
+    let medaille2Y = 130;
+    let coupeX = 525;
+    let coupeY = 20;
 
     if (idTheme) {
         choosenQuestionResponses = findAllQuestionResponses(idTheme);
@@ -116,14 +122,21 @@
             score++;
             if(score === 3|| score === 6) {
                 playSoundMedaille();
+                if(score === 3) {
+                    medaille1X = 15;
+                    medaille1Y = 50;
+                }    
+                if(score === 6) {
+                    medaille2X = 15;
+                    medaille2Y = 100;
+                }
             }
             if(score === 10){
                 playSoundCoupe();
             }
             jumpLight();
             draw();
-            
-            
+
     
         } else {
             let div = document.getElementById('annonce-rep');
@@ -155,6 +168,7 @@
         let audio = new Audio('../SOUND/274177__littlerobotsoundfactory__jingle-win-synth-03.wav');
         audio.play();
     }
+
 
     function playSoundCoupe() {
         let audio = new Audio('../SOUND/456968__funwithsound__success-resolution-video-game-fanfare-sound-effect.mp3');
@@ -260,6 +274,7 @@
                     button.onclick = function() {
                         button.innerHTML = 'Le jeu est terminé !';
                         console.log('coucou');
+                        
                     }
                     setTimeout(() => {
                         buttonQuestionSuivante();

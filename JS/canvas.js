@@ -112,8 +112,7 @@ function draw() {
         ctx.drawImage(medaille1, medaille1X, medaille1Y, 25, 25);
     }
     medaille1.src = '../images/award-297024_640.png'; // Telechargement (1s)
-    let medaille1X = 185;
-    let medaille1Y = 280;
+    
 
     
      // Afficher image 2
@@ -122,8 +121,7 @@ function draw() {
          ctx.drawImage(medaille2, medaille2X, medaille2Y, 25, 25);
      }
      medaille2.src = '../images/award-297024_640.png'; // Telechargement (1s)
-     let medaille2X = 335;
-     let medaille2Y = 130;
+     
 
      // Afficher image 3
      const coupe = new Image();
@@ -131,9 +129,7 @@ function draw() {
          ctx.drawImage(coupe, coupeX, coupeY, 60, 60);
      }
      coupe.src = '../images/achievement-1293132_640.png'; // Telechargement (1s)
-     let coupeX = 525;
-     let coupeY = 20;
-
+ 
 
      // Afficher image 4
      const ampoule = new Image();

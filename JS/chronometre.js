@@ -28,7 +28,7 @@ function buttonChangementText() {
         afficherReponseChrono0();
 
         setTimeout(() => {
-            buttonQuestionSuivante();
+            annonceScore();
         }, 2000);
     }
         
