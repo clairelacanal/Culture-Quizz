@@ -54,6 +54,8 @@
     });
     
     function afficherQuestion(){
+        let numeroQuestion = questionReponse.index;
+        let question = questionReponse.question;
         let questionEl = document.getElementById('question'); // DIV qui contient la question à mon QUIZZ
         let reponsesEl = document.getElementById('rep-possibles'); // DIV qui contient les réponses à mon QUIZZ
         
@@ -62,7 +64,9 @@
 
         let reponsesPossibles = questionReponse.reponsesPossibles;
 
-        questionEl.innerHTML = questionReponse.poserQuestion;
+        questionEl.innerHTML = question +" "+ numeroQuestion +":"+" "+" "+" "+ questionReponse.poserQuestion;
+        questionEl.style.color = '#004445';
+
 
         for(let i = 0; i < reponsesPossibles.length; i++) {
             let div = document.createElement('div');
@@ -192,7 +196,6 @@
         let audio = new Audio('../SOUND/456968__funwithsound__success-resolution-video-game-fanfare-sound-effect.mp3');
         audio.play();
     }
-    
 
 
     function questionSuivante(){
