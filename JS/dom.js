@@ -102,7 +102,7 @@
             }else {
                 buttonValider.innerHTML = "Resultats";
                 buttonValider.style.backgroundColor = "#f8b400";
-                buttonValider.style.backgroundColor = "#004445";
+                buttonValider.style.color = "#004445";
                 buttonValider.removeEventListener("click", verifieReponse);
                 buttonValider.addEventListener("click",annonceScore);
             }
@@ -113,48 +113,60 @@
     function verifieReponse() {
         let bonneReponse = questionReponse.indexOfReponse;
         let reponsesProposees = questionReponse.reponsesPossibles;
-        let indexReponseChoisie = document.querySelector('input[name="reponse"]:checked').value;
+        let chechedButton = document.querySelector('input[name="reponse"]:checked');
         
-       
-        if(bonneReponse == indexReponseChoisie) {
+        if(chechedButton == null) {
             let div = document.getElementById('annonce-rep');
-            div.innerHTML = 'Bonne réponse !';
-            div.style.color = 'green';
+            div.innerHTML = 'Veuillez sélectionner une réponse avant de valider !';
+            div.style.color = '#004445';
             div.style.fontWeight = 700;
-            div.style.textAlign = "center";
-            score++;
-            if(score === 3|| score === 6) {
-                playSoundMedaille();
-                if(score === 3) {
-                    medaille1X = 15;
-                    medaille1Y = 50;
-                }    
-                if(score === 6) {
-                    medaille2X = 15;
-                    medaille2Y = 100;
-                }
-
-            }
-            if(score === 10){
-                playSoundCoupe();
-                coupeX = 15;
-                coupeY = 150;
-            }
-            jumpLight();
-            draw();
-
-    
-        } else {
-            let div = document.getElementById('annonce-rep');
-            div.innerHTML = 'La bonne réponse est :' + " " + reponsesProposees[bonneReponse];
-            div.style.color = 'red';
-            div.style.fontWeight = 700;
-            div.style.textAlign = "center";
+            div.style.textAlign = "center"; 
         }
-        questionAValider = false;
+       
+        else {
+            let indexReponseChoisie = document.querySelector('input[name="reponse"]:checked').value;
+            if(bonneReponse == indexReponseChoisie) {
+                let div = document.getElementById('annonce-rep');
+                div.innerHTML = 'Bonne réponse !';
+                div.style.color = 'green';
+                div.style.fontWeight = 700;
+                div.style.textAlign = "center";
+                score++;
+                if(score === 3|| score === 6) {
+                    playSoundMedaille();
+                    if(score === 3) {
+                        medaille1X = 15;
+                        medaille1Y = 50;
+                    }    
+                    if(score === 6) {
+                        medaille2X = 15;
+                        medaille2Y = 100;
+                    }
+    
+                }
+                if(score === 10){
+                    playSoundCoupe();
+                    coupeX = 15;
+                    coupeY = 150;
+                }
+                jumpLight();
+                draw();
+    
+        
+            } else {
+                let div = document.getElementById('annonce-rep');
+                div.innerHTML = 'La bonne réponse est :' + " " + reponsesProposees[bonneReponse];
+                div.style.color = 'red';
+                div.style.fontWeight = 700;
+                div.style.textAlign = "center";
+            }
+            questionAValider = false;
         changeEtatBouton();
+        } 
         
     }
+
+
 
     function jumpLight() {
         let y = -50;
