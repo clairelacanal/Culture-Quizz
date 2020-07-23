@@ -166,12 +166,3 @@ draw();
 
 
 
-
-//function gagnerUneMedaille(){
-    
-//}
-
-//function gagnerLaCoupe(){
-
-//}
-

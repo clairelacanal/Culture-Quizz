@@ -26,7 +26,6 @@
     }
 
     function findAllQuestionResponses(id){
-        console.log(id);
         let reponse;
 
         if(id === 'item1') {
@@ -100,8 +99,6 @@
                 buttonValider.innerHTML = "Question suivante";
                 buttonValider.removeEventListener("click", verifieReponse);
                 buttonValider.addEventListener("click",questionSuivante);
-            }else{
-                affichageLastQuestion();
             }
 
         } 
@@ -130,9 +127,12 @@
                     medaille2X = 15;
                     medaille2Y = 100;
                 }
+
             }
             if(score === 10){
                 playSoundCoupe();
+                coupeX = 15;
+                coupeY = 150;
             }
             jumpLight();
             draw();
@@ -269,18 +269,7 @@
         }
     }
 
-        function affichageLastQuestion() {
-            let button = document.getElementById('button');
-                    button.onclick = function() {
-                        button.innerHTML = 'Le jeu est terminé !';
-                        console.log('coucou');
-                        
-                    }
-                    setTimeout(() => {
-                        buttonQuestionSuivante();
-                    }, 2000);
-                }
-                
+          
             
                 
         

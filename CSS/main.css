@@ -43,20 +43,23 @@ body {
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 0.5em;
 }
 
 #container-quizz {
     background-color: #2c786c;
     width: 600px;
     height: 500px;
-    border: 3px double #f8b400;
+    border: 1px solid #f8b400;
+    border-radius: 0.2em;
 }
 
 #container-canvas {
     background-color: #2c786c;
     width: 600px;
     height: 500px;
-    border: 3px double #f8b400;
+    border: 1px solid #f8b400;
+    border-radius: 0.2em;
 }
 
 #chronometre {
