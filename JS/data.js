@@ -51,7 +51,7 @@ const artEtLiterrature = [
     {
         question: 'Question',
         index: 7,
-        poserQuestion: 'Quel peintre fit scandale avec "L\'Origine du Monde", peint en 1866 ?',
+        poserQuestion: 'Quel peintre fit scandale avec "L\'Origine du Monde" en 1866 ?',
         reponsesPossibles: ['Gustave Courbet', 'Edouard Manet', 'André Derain', ' Georges Seurat'],
         indexOfReponse: 0
     },
@@ -155,7 +155,7 @@ const geographieEtHistoire = [
         question: 'Question',
         index: 9,
         poserQuestion: 'Quel âge a la terre ?',
-        reponsesPossibles: ['4.5 milliards d\'années', '22 milliards d\'années', ' 850 millions d\'années', '9 milliards d\'années'],
+        reponsesPossibles: ['4.5 milliards d\'années', '22 milliards d\'années', '850 millions d\'années', '9 milliards d\'années'],
         indexOfReponse: 0
     },
 
@@ -305,7 +305,7 @@ const natureEtEnvironnement = [
     {
         question: 'Question',
         index: 6,
-        poserQuestion: ' Comment la grenouille des bois (Amérique du Nord) hiberne-t-elle ?',
+        poserQuestion: ' Comment la grenouille des bois hiberne-t-elle ?',
         reponsesPossibles: ['Son organisme gèle', 'Elle s\’enterre', 'Elle se déplace dans une région chaude', 'Elle meurt avant d\'hiberner'],
         indexOfReponse: 0
     },
@@ -360,7 +360,7 @@ const santeEtMedecine = [
         question: 'Question',
         index: 2,
         poserQuestion: 'Quel est le nom courant de la maladie influenza ? ',
-        reponsesPossibles: ['Angine', 'Grippe', 'Migraine', ' Vertige'],
+        reponsesPossibles: ['Angine', 'Grippe', 'Migraine', 'Vertige'],
         indexOfReponse: 1
     },
 
@@ -377,7 +377,7 @@ const santeEtMedecine = [
         question: 'Question',
         index: 4,
         poserQuestion: 'Chez l’être humain, quelle glande située sous l’encéphale produit notamment l’hormone de croissance ? ',
-        reponsesPossibles: ['Hypophyse', 'Surrénale', 'Thyroide', ' Sudoripare'],
+        reponsesPossibles: ['Hypophyse', 'Surrénale', 'Thyroide', 'Sudoripare'],
         indexOfReponse: 0
     },
 
@@ -385,7 +385,7 @@ const santeEtMedecine = [
         question: 'Question',
         index: 5,
         poserQuestion: 'Qu\'est-ce qu\'une épidémie ?',
-        reponsesPossibles: [' Une maladie qui s\'étend sur un continent', 'La propagation d\'une maladie', 'Ce qui provoque la propagation d\'une maladie ', ' Une famine'],
+        reponsesPossibles: ['Une maladie qui s\'étend sur un continent', 'La propagation d\'une maladie', 'Ce qui provoque la propagation d\'une maladie ', 'Une famine'],
         indexOfReponse: 1
     },
 
@@ -393,7 +393,7 @@ const santeEtMedecine = [
         question: 'Question',
         index: 6,
         poserQuestion: 'Qu\'est-ce que la psychologie globalement ?',
-        reponsesPossibles: ['L\'étude des personnes à moitié dérangées', 'L\'étude des personnes fragilisées', 'L\'étude du fonctionnement du cerveau', ' L\'étude des habitudes des personnes fragilisées'],
+        reponsesPossibles: ['L\'étude des personnes à moitié dérangées', 'L\'étude des personnes fragilisées', 'L\'étude du fonctionnement du cerveau', 'L\'étude des habitudes des personnes fragilisées'],
         indexOfReponse: 1
     },
 
@@ -401,7 +401,7 @@ const santeEtMedecine = [
         question: 'Question',
         index: 7,
         poserQuestion: 'Combien y a-t-il d\'hémisphères cérébraux chez l\'homme ?',
-        reponsesPossibles: ['2', ' 4', '6', '8'],
+        reponsesPossibles: ['2', '4', '6', '8'],
         indexOfReponse: 0
     },
 
@@ -409,7 +409,7 @@ const santeEtMedecine = [
         question: 'Question',
         index: 8,
         poserQuestion: 'Si on compare le volume du cerveau de l\'homme avec celui du gorille, on peut dire que :',
-        reponsesPossibles: [' Ils sont sensiblement de la même taille', ' Le cerveau du gorille est 2 fois plus gros que celui de l\'homme', ' Le cerveau de l\'homme est 3 fois plus gros que celui du gorille', 'Il n\'y a pas eu d\'études'],
+        reponsesPossibles: ['Ils sont sensiblement de la même taille', 'Le cerveau du gorille est 2 fois plus gros que celui de l\'homme', 'Le cerveau de l\'homme est 3 fois plus gros que celui du gorille', 'Il n\'y a pas eu d\'études'],
         indexOfReponse: 0
     },
 
@@ -417,7 +417,7 @@ const santeEtMedecine = [
         question: 'Question',
         index: 9,
         poserQuestion: 'Voici une petite citation " sucrée ": Quand on a oublié d\'acheter du sucre, on peut parfaitement sucrer son café avec une betterave, mais c\'est plus long ". De qui est-elle ?',
-        reponsesPossibles: ['Franck Dubosc', 'Coluche', '   Guy Bedos', 'François Cavanna'],
+        reponsesPossibles: ['Franck Dubosc', 'Coluche', 'Guy Bedos', 'François Cavanna'],
         indexOfReponse: 3
     },
 
@@ -425,7 +425,7 @@ const santeEtMedecine = [
         question: 'Question',
         index: 10,
         poserQuestion: 'Qui a introduit le tabac en France ?',
-        reponsesPossibles: [' Philip Morris', 'Patrick Tabacco', 'Jean Nicot', 'René Filtre'],
+        reponsesPossibles: ['Philip Morris', 'Patrick Tabacco', 'Jean Nicot', 'René Filtre'],
         indexOfReponse: 2
     },
 
@@ -446,7 +446,7 @@ const sport = [
         question: 'Question',
         index: 2,
         poserQuestion: 'De combien de joueurs se compose une équipe de football ? ',
-        reponsesPossibles: ['14 joueurs', '13 joueurs', '12 joueurs', ' 11 joueurs'],
+        reponsesPossibles: ['14 joueurs', '13 joueurs', '12 joueurs', '11 joueurs'],
         indexOfReponse: 3
     },
 
@@ -463,7 +463,7 @@ const sport = [
         question: 'Question',
         index: 4,
         poserQuestion: 'Quel sport est arbitré obligatoirement en français ? ',
-        reponsesPossibles: ['Le football', 'Le handball', 'L\'escrime', ' Le ping-pong'],
+        reponsesPossibles: ['Le football', 'Le handball', 'L\'escrime', 'Le ping-pong'],
         indexOfReponse: 2
     },
 
@@ -471,7 +471,7 @@ const sport = [
         question: 'Question',
         index: 5,
         poserQuestion: 'Combien y a-t-il de périodes dans un match de hockey sur glace ?',
-        reponsesPossibles: [' 3 périodes de 20 minutes chacune', ' 3 périodes de 30 minutes chacune', '2 périodes de 15 minutes chacune', '2 périodes de 25 minutes chacune'],
+        reponsesPossibles: ['3 périodes de 20 minutes chacune', '3 périodes de 30 minutes chacune', '2 périodes de 15 minutes chacune', '2 périodes de 25 minutes chacune'],
         indexOfReponse: 0
     },
 
@@ -487,7 +487,7 @@ const sport = [
         question: 'Question',
         index: 7,
         poserQuestion: 'Avant un combat de sumo, que jettent les lutteurs sur la zone de combat ??',
-        reponsesPossibles: ['Du sucre', ' Du sel', 'De la farine', 'De l\'eau'],
+        reponsesPossibles: ['Du sucre', 'Du sel', 'De la farine', 'De l\'eau'],
         indexOfReponse: 1
     },
 

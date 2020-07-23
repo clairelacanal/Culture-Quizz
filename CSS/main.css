@@ -75,6 +75,7 @@ body {
     width: 600px;
     height: 7em;
     border-radius: 1em;
+    font-family: 'Roboto', sans-serif;
 }
 
 #reponses {
@@ -86,7 +87,8 @@ body {
     margin-top: 1em;
     width: 600px;
     height: 16em;
-    border-radius: 1em;  
+    border-radius: 1em;
+    font-family: 'Roboto', sans-serif;  
 }
 
 .button-val {
@@ -135,12 +137,8 @@ button {
 #question {
     font-weight: 700;
     padding-top: 0.8em;
-    border-radius: 1em;
-    
-   
+    border-radius: 1em;   
 }
-
-
 
 #rep-possibles {
     font-weight: 700;

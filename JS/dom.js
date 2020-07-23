@@ -57,6 +57,7 @@
         let questionEl = document.getElementById('question'); // DIV qui contient la question à mon QUIZZ
         let reponsesEl = document.getElementById('rep-possibles'); // DIV qui contient les réponses à mon QUIZZ
         
+       
         questionEl.innerHTML = "";
         reponsesEl.innerHTML = "";
 
@@ -84,7 +85,7 @@
             div.appendChild(label);
         }
         stopChrono();
-       
+        
     }
 
 
@@ -123,6 +124,7 @@
             div.style.color = '#004445';
             div.style.fontWeight = 700;
             div.style.textAlign = 'center';
+
             
         }
        
