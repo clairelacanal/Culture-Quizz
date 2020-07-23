@@ -124,8 +124,7 @@
             div.style.color = '#004445';
             div.style.fontWeight = 700;
             div.style.textAlign = 'center';
-
-            
+            startChrono(); 
         }
        
         else {
@@ -137,8 +136,8 @@
                 div.style.fontWeight = 700;
                 div.style.textAlign = 'center';
                 score++;
+                jumpSound();
                 if(score === 3|| score === 6) {
-                    playSoundMedaille();
                     if(score === 3) {
                         medaille1X = 15;
                         medaille1Y = 50;
@@ -147,13 +146,20 @@
                         medaille2X = 15;
                         medaille2Y = 100;
                     }
+                    setTimeout(() => {
+                        playSoundMedaille();
+                    }, 100);
     
                 }
                 if(score === 10){
-                    playSoundCoupe();
                     coupeX = 15;
                     coupeY = 150;
+                    setTimeout(() => {
+                        playSoundCoupe();
+                    }, 100);
                 }
+
+            
                 jumpLight();
                 draw();
     
@@ -164,6 +170,7 @@
                 div.style.color = 'red';
                 div.style.fontWeight = 700;
                 div.style.textAlign = 'center';
+                noJump();
             }
             questionAValider = false;
         changeEtatBouton();
@@ -195,6 +202,16 @@
 
     function playSoundCoupe() {
         let audio = new Audio('../SOUND/456968__funwithsound__success-resolution-video-game-fanfare-sound-effect.mp3');
+        audio.play();
+    }
+
+    function jumpSound() {
+        let audio = new Audio('../SOUND/445157__tissman__jump.wav');
+        audio.play();
+    }
+
+    function noJump() {
+        let audio = new Audio('../SOUND/517765__danlucaz__game-fx-8.wav');
         audio.play();
     }
 
@@ -303,6 +320,7 @@
                 imageBad.style.marginRight = '0.5em';
         }
     }
+
 
           
             

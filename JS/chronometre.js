@@ -19,6 +19,15 @@ function afficherCouleur() {
     }
 }
 
+function alertChrono() {
+    let audio = new Audio('../SOUND/211102__qubodup__time-running-out.flac');
+    if(counter <=5 && counter > 0){
+        audio.play(); 
+    } 
+}
+alertChrono();
+
+
 function buttonChangementText() {
     const buttonValider = document.getElementById('button');
     if( counter === 0){
@@ -55,7 +64,6 @@ function resetChrono() {
 
 function startChrono() {
     resetChrono() // reset des cases
-
     // demarre mon anim
     intervalId = setInterval(() => {
         counter--;
@@ -63,7 +71,7 @@ function startChrono() {
         buttonChangementText()
     }, 1000);
 }
-startChrono()
+startChrono();
 
 
 
