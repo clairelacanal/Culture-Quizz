@@ -1,6 +1,4 @@
-
-
-    
+   
     const urlParams = new URLSearchParams(window.location.search);
     const idTheme = urlParams.get('idTheme');
     let questionReponse;
@@ -260,6 +258,9 @@
             divButton.appendChild(rejouerButton);
             rejouerButton.style.backgroundColor = "#2c786c";
             rejouerButton.style.color = '#f8b400';
+            rejouerButton.addEventListener("click", () => {
+                window.location.href = "../HTML/menu.html";
+            });
 
             if(score === 10) {
                 annonce.innerHTML = `Tu as obtenu ${score} ! C'est le meilleur score !`;
