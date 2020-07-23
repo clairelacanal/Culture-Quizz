@@ -164,3 +164,7 @@ button {
     justify-content: flex-start;
    
 }
+
+#annonce-rep {
+    width: 600px;
+}

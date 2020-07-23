@@ -122,7 +122,8 @@
             div.innerHTML = 'Veuillez sélectionner une réponse avant de valider !';
             div.style.color = '#004445';
             div.style.fontWeight = 700;
-            div.style.textAlign = "center"; 
+            div.style.textAlign = 'center';
+            
         }
        
         else {
@@ -132,7 +133,7 @@
                 div.innerHTML = 'Bonne réponse !';
                 div.style.color = 'green';
                 div.style.fontWeight = 700;
-                div.style.textAlign = "center";
+                div.style.textAlign = 'center';
                 score++;
                 if(score === 3|| score === 6) {
                     playSoundMedaille();
@@ -160,7 +161,7 @@
                 div.innerHTML = 'La bonne réponse est :' + " " + reponsesProposees[bonneReponse];
                 div.style.color = 'red';
                 div.style.fontWeight = 700;
-                div.style.textAlign = "center";
+                div.style.textAlign = 'center';
             }
             questionAValider = false;
         changeEtatBouton();
