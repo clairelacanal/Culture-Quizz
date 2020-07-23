@@ -99,6 +99,12 @@
                 buttonValider.innerHTML = "Question suivante";
                 buttonValider.removeEventListener("click", verifieReponse);
                 buttonValider.addEventListener("click",questionSuivante);
+            }else {
+                buttonValider.innerHTML = "Resultats";
+                buttonValider.style.backgroundColor = "#f8b400";
+                buttonValider.style.backgroundColor = "#004445";
+                buttonValider.removeEventListener("click", verifieReponse);
+                buttonValider.addEventListener("click",annonceScore);
             }
 
         } 
@@ -187,7 +193,7 @@
             question.remove();
             reponses.remove();
             button.remove();
-            annonceScore();
+            
         }else{
             indexQuestion++;
             questionReponse = choosenQuestionResponses[indexQuestion];
@@ -205,6 +211,16 @@
     }
 
     function annonceScore() {
+        let chrono = document.getElementById('chronometre');
+        let question = document.getElementById('question');
+        let reponses = document.getElementById('reponses');
+        let button = document.getElementById('button');
+
+        chrono.remove();
+        question.remove();
+        reponses.remove();
+        button.remove();
+        
         let div = document.getElementById('annonce-score');
             div.style.width = '600px';
             div.style.height = '31.2em';
