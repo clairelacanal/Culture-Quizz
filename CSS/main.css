@@ -135,12 +135,12 @@ button {
 #question {
     font-weight: 700;
     padding-top: 0.8em;
-    border-radius: 1em;  
+    border-radius: 1em;
+    
+   
 }
 
-#question::before { 
-    content: "\00a0 \00a0 \00a0 "; 
-} 
+
 
 #rep-possibles {
     font-weight: 700;
