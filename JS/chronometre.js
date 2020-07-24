@@ -5,6 +5,7 @@ let intervalId;
 function afficherCouleur() {
     let gridSelected;
     if (counter < 21) {
+        chronoTicToc();
         let numGrid = 21 - counter;
         let gridName = "#grid" + numGrid;
         gridSelected = document.querySelector(gridName);
@@ -16,16 +17,16 @@ function afficherCouleur() {
         gridSelected.style.backgroundColor = 'orange';
     }else if(counter <= 7 && counter > 0) {
         gridSelected.style.backgroundColor = 'red';
+      
     }
 }
 
-function alertChrono() {
-    let audio = new Audio('../SOUND/211102__qubodup__time-running-out.flac');
-    if(counter <=5 && counter > 0){
-        audio.play(); 
-    } 
+
+function chronoTicToc() {
+    let audio = new Audio('../SOUND/422641__trullilulli__sfx-ambiance-clock-tock.wav');
+    audio.play();
 }
-alertChrono();
+
 
 
 function buttonChangementText() {
