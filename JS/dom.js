@@ -21,6 +21,7 @@
         afficherQuestion();
         questionAValider = true;
         changeEtatBouton();
+        startChrono();
     }
 
     function findAllQuestionResponses(id){
@@ -84,7 +85,6 @@
             label.innerHTML = reponsesPossibles[i];
             div.appendChild(label);
         }
-        stopChrono();
         
     }
 
@@ -124,10 +124,10 @@
             div.style.color = '#004445';
             div.style.fontWeight = 700;
             div.style.textAlign = 'center';
-            startChrono(); 
         }
        
         else {
+            stopChrono();
             let indexReponseChoisie = document.querySelector('input[name="reponse"]:checked').value;
             if(bonneReponse == indexReponseChoisie) {
                 let div = document.getElementById('annonce-rep');

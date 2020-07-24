@@ -3,7 +3,7 @@ const artEtLiterrature = [
         question: 'Question',
         index: 1,
         poserQuestion: 'Quel artiste a peint : Les raboteurs de parquets?',
-        reponsesPossibles: ['Pierre-Auguste Renoir', 'Gustave Caillebotte', 'Georges Seurat', ' Frédéric Bazille'],
+        reponsesPossibles: ['Pierre-Auguste Renoir', 'Gustave Caillebotte', 'Georges Seurat', 'Frédéric Bazille'],
         indexOfReponse: 1
     },
 
@@ -11,7 +11,7 @@ const artEtLiterrature = [
         question: 'Question',
         index: 2,
         poserQuestion: 'Comment Auguste Rodin a-t-il baptisé son oeuvre ?',
-        reponsesPossibles: ['Le Penseur', 'Le Songeur', 'La Méditation', ' Le Siffleur'],
+        reponsesPossibles: ['Le Penseur', 'Le Songeur', 'La Méditation', 'Le Siffleur'],
         indexOfReponse: 0
     },
 
@@ -19,7 +19,7 @@ const artEtLiterrature = [
         question: 'Question',
         index: 3,
         poserQuestion: 'Quel peintre représentant du mouvement américain du pop art a représenté Jackie Kennedy ?',
-        reponsesPossibles: ['Tom Wesselmann', 'Roy Lichtenstein', 'Andy Warhol', ' Jean-Michel Basquiat'],
+        reponsesPossibles: ['Tom Wesselmann', 'Roy Lichtenstein', 'Andy Warhol', 'Jean-Michel Basquiat'],
         indexOfReponse: 2
     },
 
@@ -28,7 +28,7 @@ const artEtLiterrature = [
         question: 'Question',
         index: 4,
         poserQuestion: 'Parmi ces livres, lequel n\'a pas été écrit par François Rabelais ?',
-        reponsesPossibles: ['Gargantua', 'Le Tiers Livre', 'Le Roman de Renart', ' Pantagruel'],
+        reponsesPossibles: ['Gargantua', 'Le Tiers Livre', 'Le Roman de Renart', 'Pantagruel'],
         indexOfReponse: 2
     },
 
@@ -36,7 +36,7 @@ const artEtLiterrature = [
         question: 'Question',
         index: 5,
         poserQuestion: 'Parmi ces oeuvres de Pierre Corneille, laquelle a été écrite en première ?',
-        reponsesPossibles: ['L\'illusion comique', 'Polyeucte', 'Le Cid', ' Horace'],
+        reponsesPossibles: ['L\'illusion comique', 'Polyeucte', 'Le Cid', 'Horace'],
         indexOfReponse: 0
     },
 
@@ -44,7 +44,7 @@ const artEtLiterrature = [
         question: 'Question',
         index: 6,
         poserQuestion: 'Parmi les auteurs ci-dessous, lequel ne fait pas partie du mouvement littéraire du Romantisme ?',
-        reponsesPossibles: ['Gustave Flaubert', 'Les Frères Grimm', 'Chateaubriand', ' Victor Hugo'],
+        reponsesPossibles: ['Gustave Flaubert', 'Les Frères Grimm', 'Chateaubriand', 'Victor Hugo'],
         indexOfReponse: 1
     },
 
@@ -52,7 +52,7 @@ const artEtLiterrature = [
         question: 'Question',
         index: 7,
         poserQuestion: 'Quel peintre fit scandale avec "L\'Origine du Monde" en 1866 ?',
-        reponsesPossibles: ['Gustave Courbet', 'Edouard Manet', 'André Derain', ' Georges Seurat'],
+        reponsesPossibles: ['Gustave Courbet', 'Edouard Manet', 'André Derain', 'Georges Seurat'],
         indexOfReponse: 0
     },
 
@@ -60,7 +60,7 @@ const artEtLiterrature = [
         question: 'Question',
         index: 8,
         poserQuestion: 'Quelle est l\'origine de "Rococo", le nom d\'un mouvement artistique du XVIIIème siècle ?',
-        reponsesPossibles: [' Du chant du coq', 'Du nom d\'un peintre italien', "Du mot 'rocaille'", 'Du nom d\'un chien'],
+        reponsesPossibles: ['Du chant du coq', 'Du nom d\'un peintre italien', "Du mot 'rocaille'", 'Du nom d\'un chien'],
         indexOfReponse: 2
     },
 
@@ -68,7 +68,7 @@ const artEtLiterrature = [
         question: 'Question',
         index: 9,
         poserQuestion: 'Parmi ces livres, lequel n\'a pas été écrit par Charles Dickens ?',
-        reponsesPossibles: [' David Copperfield', 'La ferme des animaux', 'Un chant de Noël', ' Oliver Twist'],
+        reponsesPossibles: ['David Copperfield', 'La ferme des animaux', 'Un chant de Noël', 'Oliver Twist'],
         indexOfReponse: 1
     },
 
@@ -76,7 +76,7 @@ const artEtLiterrature = [
         question: 'Question',
         index: 10,
         poserQuestion: 'Quel poème de Lamartine contient les vers suivants : Ô temps ! suspends ton vol, et vous, heures propices !/ Suspendez votre cours',
-        reponsesPossibles: [' L\'Horloge', ' Le Papillon', 'Le Lac', ' La Marée'],
+        reponsesPossibles: ['L\'Horloge', 'Le Papillon', 'Le Lac', 'La Marée'],
         indexOfReponse: 2
     },
 
@@ -98,7 +98,7 @@ const geographieEtHistoire = [
         question: 'Question',
         index: 2,
         poserQuestion: 'Qui était Quetzalcoalt pour les Aztèques ? ',
-        reponsesPossibles: ['Le cheval de Troie', 'Le dieu Soleil', 'L\'Empereur', ' Le serpent à plumes'],
+        reponsesPossibles: ['Le cheval de Troie', 'Le dieu Soleil', 'L\'Empereur', 'Le serpent à plumes'],
         indexOfReponse: 3
     },
 
@@ -115,7 +115,7 @@ const geographieEtHistoire = [
         question: 'Question',
         index: 4,
         poserQuestion: 'Où se trouve le désert de Taklamakan? ',
-        reponsesPossibles: ['En Afrique', 'En Australie', 'En Chine', ' Au Chili'],
+        reponsesPossibles: ['En Afrique', 'En Australie', 'En Chine', 'Au Chili'],
         indexOfReponse: 2
     },
 
@@ -139,7 +139,7 @@ const geographieEtHistoire = [
         question: 'Question',
         index: 7,
         poserQuestion: 'De quelle ville Nabuchodonosor II était-il le roi ?',
-        reponsesPossibles: ['Babylone', ' Voltage', 'Pompei', 'Carthage'],
+        reponsesPossibles: ['Babylone', 'Voltage', 'Pompei', 'Carthage'],
         indexOfReponse: 0
     },
 
@@ -147,7 +147,7 @@ const geographieEtHistoire = [
         question: 'Question',
         index: 8,
         poserQuestion: 'Lequel de ces pays d\'Afrique s\'est appelé Dahomey ?',
-        reponsesPossibles: [' Togo', 'Sénégal', 'Zaire', 'Bénin'],
+        reponsesPossibles: ['Togo', 'Sénégal', 'Zaire', 'Bénin'],
         indexOfReponse: 3
     },
 
@@ -219,7 +219,7 @@ const musiqueEtFilms = [
         question: 'Question',
         index: 6,
         poserQuestion: 'Dans quel film Leonardo DiCaprio n\'a-t-il pas joué ?',
-        reponsesPossibles: ['Aviator', 'La Mémoire dans la peau', 'La Plage', ' Les Noces rebelles'],
+        reponsesPossibles: ['Aviator', 'La Mémoire dans la peau', 'La Plage', 'Les Noces rebelles'],
         indexOfReponse: 1
     },
 
@@ -290,7 +290,7 @@ const natureEtEnvironnement = [
         question: 'Question',
         index: 4,
         poserQuestion: 'Comment les chauves-souris voient-elles dans le noir ? ',
-        reponsesPossibles: ['Avec leurs oreilles', 'Avec des capteurs sur leur nez', ' Elles se déplacent sans voir', 'Avec leur odorat'],
+        reponsesPossibles: ['Avec leurs oreilles', 'Avec des capteurs sur leur nez', 'Elles se déplacent sans voir', 'Avec leur odorat'],
         indexOfReponse: 0
     },
 
@@ -298,7 +298,7 @@ const natureEtEnvironnement = [
         question: 'Question',
         index: 5,
         poserQuestion: 'Quelle plante a inspiré la création du scratch Velcro?',
-        reponsesPossibles: [' Le chardon', 'Le cactus', ' La bardane', 'L\'ortie'],
+        reponsesPossibles: ['Le chardon', 'Le cactus', 'La bardane', 'L\'ortie'],
         indexOfReponse: 2
     },
 
@@ -314,7 +314,7 @@ const natureEtEnvironnement = [
         question: 'Question',
         index: 7,
         poserQuestion: ' Quelle est la particularité du faucon pelerin?',
-        reponsesPossibles: [' Il peut rester plusieurs mois sans manger', 'Il se camoufle pour capturer ses proies', 'C’est l’oiseau le plus rapide', 'Il dort 2 heures par nuit'],
+        reponsesPossibles: ['Il peut rester plusieurs mois sans manger', 'Il se camoufle pour capturer ses proies', 'C’est l’oiseau le plus rapide', 'Il dort 2 heures par nuit'],
         indexOfReponse: 2
     },
 
@@ -385,7 +385,7 @@ const santeEtMedecine = [
         question: 'Question',
         index: 5,
         poserQuestion: 'Qu\'est-ce qu\'une épidémie ?',
-        reponsesPossibles: ['Une maladie qui s\'étend sur un continent', 'La propagation d\'une maladie', 'Ce qui provoque la propagation d\'une maladie ', 'Une famine'],
+        reponsesPossibles: ['Une maladie qui s\'étend sur un continent', 'La propagation d\'une maladie', 'Ce qui provoque la propagation d\'une maladie', 'Une famine'],
         indexOfReponse: 1
     },
 
@@ -503,7 +503,7 @@ const sport = [
         question: 'Question',
         index: 9,
         poserQuestion: 'De quel pays le buzkaschi (un sport équestre où les concurrents tentent d’attraper un cadavre de chèvre) est-il le sport national ?',
-        reponsesPossibles: ['Tajikistan', ' Afghanistan', 'Uzbekistan', 'Turkmenistan'],
+        reponsesPossibles: ['Tajikistan', 'Afghanistan', 'Uzbekistan', 'Turkmenistan'],
         indexOfReponse: 1
     },
 

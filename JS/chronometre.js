@@ -35,6 +35,7 @@ function buttonChangementText() {
         buttonValider.style.backgroundColor = "red";
         buttonValider.style.color = "white";
         afficherReponseChrono0();
+        stopChrono();
 
         setTimeout(() => {
             buttonQuestionSuivante();
@@ -46,10 +47,7 @@ function buttonChangementText() {
 
 
 function stopChrono() {
-    let btn = document.getElementById('button');
-    btn.onclick = function() {
         clearInterval(intervalId);
-    }
 }
 
 function resetChrono() {
@@ -71,7 +69,7 @@ function startChrono() {
         buttonChangementText()
     }, 1000);
 }
-startChrono();
+
 
 
 
