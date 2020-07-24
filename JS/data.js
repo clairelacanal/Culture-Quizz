@@ -486,7 +486,7 @@ const sport = [
     {
         question: 'Question',
         index: 7,
-        poserQuestion: 'Avant un combat de sumo, que jettent les lutteurs sur la zone de combat ??',
+        poserQuestion: 'Avant un combat de sumo, que jettent les lutteurs sur la zone de combat ?',
         reponsesPossibles: ['Du sucre', 'Du sel', 'De la farine', 'De l\'eau'],
         indexOfReponse: 1
     },
