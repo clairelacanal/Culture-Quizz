@@ -88,7 +88,8 @@ body {
     width: 600px;
     height: 16em;
     border-radius: 1em;
-    font-family: 'Roboto', sans-serif;  
+    font-family: 'Roboto', sans-serif;
+   
 }
 
 .button-val {
@@ -128,7 +129,7 @@ button {
     border: 1px solid #004445;
     width: 15em;
     height: 3.5em;
-    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+    box-shadow: 12px 12px 2px 1px rgba(111, 111, 122, 0.2);
     cursor: pointer;
     border-radius: 0.5em;
     text-transform: uppercase;
@@ -164,5 +165,11 @@ button {
 }
 
 #annonce-rep {
+    width: 600px;
+}
+
+.reponse:hover {
+    cursor: pointer;
+    background-color:rgba(111, 111, 122, 0.2);
     width: 600px;
 }
