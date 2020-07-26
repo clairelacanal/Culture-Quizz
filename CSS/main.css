@@ -174,3 +174,7 @@ button {
     width: 600px;
 }
 
+label {
+    width: 100%;
+    cursor: pointer;
+}

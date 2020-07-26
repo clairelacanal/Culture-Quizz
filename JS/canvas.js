@@ -1,9 +1,8 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-const W = window.innerWidth;
-const Y = window.innerHeight;
-canvas.width = W;
-canvas.height = Y;
+const W = canvas.width ;
+const Y = canvas.height;
+
 
 let maxParticules = 1000;
 let particules = [];
@@ -20,6 +19,7 @@ for(let i = 0; i < maxParticules; i++){
 
 function drawFlakes(){
     ctx.clearRect(0,0, W, Y);
+    draw();
 
     for(let i = 0; i < maxParticules; i++) {
         let particule = particules[i];
