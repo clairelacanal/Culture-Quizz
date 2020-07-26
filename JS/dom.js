@@ -157,6 +157,7 @@
                     setTimeout(() => {
                         playSoundCoupe();
                     }, 100);
+                    setInterval(drawFlakes, 20);
                 }
 
             

@@ -1,10 +1,68 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+const W = window.innerWidth;
+const Y = window.innerHeight;
+canvas.width = W;
+canvas.height = Y;
+
+let maxParticules = 1000;
+let particules = [];
+for(let i = 0; i < maxParticules; i++){
+    particules.push({
+        x: Math.random() * W,
+        y: Math.random() * Y,
+        r: Math.random() * 18 + 1,
+        d: Math.random() * maxParticules,
+        color: "rgba(" + Math.floor((Math.random() * 255)) + ", " + Math.floor((Math.random() * 255)) + ", " + Math.floor((Math.random() * 255)) + ", 0.8)",
+        tilt: Math.floor(Math.random() * 5) - 5
+    });
+}
+
+function drawFlakes(){
+    ctx.clearRect(0,0, W, Y);
+
+    for(let i = 0; i < maxParticules; i++) {
+        let particule = particules[i];
+        ctx.beginPath();
+        ctx.lineWidth = particule.r;
+        ctx.strokeStyle = particule.color;
+        ctx.moveTo(particule.x, particule.y);
+        ctx.lineTo(particule.x + particule.tilt + particule.r / 2, particule.y + particule.tilt);
+        ctx.stroke();
+    }
+    update();
+}
+
+let angle = 0;
+function update() {
+    angle += 0.01;
+    for(let i = 0; i < maxParticules; i++) {
+        let particule = particules[i];
+        particule.y += Math.cos(angle + particule.d) + 1 + particule.r / 2;
+        particule.x += Math.sin(angle) * 2;
+        if(particule.x > W + 5 || particule.x < -5 || particule.y > Y) {
+            if(i % 3 > 0) 
+            {
+                particules[i] = {
+                    x: Math.random() * W,
+                    y: -10,
+                    r: particule.r,
+                    d: particule.d,
+                    color: particule.color,
+                    tilt: particule.tilt
+
+                };
+            }
+        }
+    }
+}
+
+
 
 
 function draw() {
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, W, Y);
     
     ctx.fillStyle = '#f8b400'; // jaune
     ctx.fillRect(125, 430, 50, 50);
