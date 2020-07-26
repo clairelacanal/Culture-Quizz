@@ -69,9 +69,13 @@
 
 
         for(let i = 0; i < reponsesPossibles.length; i++) {
+
+            let label = document.createElement('label');
+            reponsesEl.appendChild(label);
+
             let div = document.createElement('div');
             div.setAttribute("class", "reponse");
-            reponsesEl.appendChild(div);
+            label.appendChild(div);
 
             let input = document.createElement('input');
             input.setAttribute("type", "radio");
@@ -80,10 +84,10 @@
             input.value = i;
             div.appendChild(input);
 
-            let label = document.createElement('label');
-            label.setAttribute("for", "item-" + (i+1));
-            label.innerHTML = reponsesPossibles[i];
-            div.appendChild(label);
+            let text = document.createElement('text');
+            text.setAttribute("for", "item-" + (i+1));
+            text.innerHTML = reponsesPossibles[i];
+            div.appendChild(text);
         }
         
     }
