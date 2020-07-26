@@ -85,6 +85,7 @@ function afficherReponseChrono0() {
         div.innerHTML = 'La bonne réponse est :' + " " + reponsesProposees[bonneReponse];
         div.style.color = 'red';
         div.style.fontWeight = 700;
+        div.style.textAlign = 'center';
         
     }
 }

@@ -81,7 +81,7 @@
             div.appendChild(input);
 
             let label = document.createElement('label');
-            label.setAttribute("for", i);
+            label.setAttribute("for", "item-" + (i+1));
             label.innerHTML = reponsesPossibles[i];
             div.appendChild(label);
         }
