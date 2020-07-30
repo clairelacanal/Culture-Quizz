@@ -184,7 +184,6 @@
     }
 
 
-
     function jumpLight() {
         let y = -50;
         let x = 50;
