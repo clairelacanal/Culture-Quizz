@@ -25,7 +25,7 @@
     - menu.css
     - main.css
 
-- 3 fichiers JS:
+- 4 fichiers JS:
     - canvas.js
     - chronometre.js
     - data.js
